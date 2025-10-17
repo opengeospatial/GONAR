@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.22">
+<title>OGC Geospatial Observation Needs And Requirements (GONAR) SWG Charter</title>
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="book">
+<div id="header">
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div style="page-break-after: always;"></div>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">Open Geospatial Consortium</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Submission Date: 2024-07-30</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Approval Date:   &lt;yyyy-mm-dd&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Internal reference number of this OGC&#174; document:    OGC 24-011r1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Category: OGC&#174; Standards Working Group Charter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Authors:   Joan Maso and Alba Brobia</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong class="big">OGC Geospatial Observation Needs And Requirements (GONAR) SWG Charter</strong></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock"><strong>Copyright notice</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Copyright &#169; 2024 Open Geospatial Consortium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" style="background-color: #FFFFFF;"><p class="tableblock">To obtain additional rights of use, visit <a href="http://www.opengeospatial.org/legal/" class="bare">http://www.opengeospatial.org/legal/</a></p></td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>To: OGC members &amp; interested parties</p>
+</div>
+<div class="paragraph">
+<p>A new OGC Standards Working Group (SWG) is being formed. The OGC members listed below have proposed the  Geospatial Observation Needs And Requirements (GONAR) SWG Charter. The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.</p>
+</div>
+<div class="paragraph">
+<p>The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG&#8217;s official charter. Technical discussions may occur no sooner than the SWG&#8217;s first meeting.</p>
+</div>
+<div class="paragraph">
+<p>This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG at the first meeting (see details below) are that:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You must be an employee of an OGC member organization or an individual
+member of OGC;</p>
+</li>
+<li>
+<p>The OGC member must have signed the OGC Membership agreement;</p>
+</li>
+<li>
+<p>You must notify the SWG chair of your intent to participate to the first meeting. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join; and</p>
+</li>
+<li>
+<p>You must attend meetings of the SWG. The first meeting of this SWG is at the time and date fixed below. Attendance may be by teleconference.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.</p>
+</div>
+<div class="paragraph">
+<p>Non-OGC members who wish to participate may contact us about joining the OGC. In addition, the public may access some of the resources maintained for each SWG: the SWG public description, the SWG Charter, Change Requests, and public comments, which will be linked from the SWG’s page.</p>
+</div>
+<div class="paragraph">
+<p>Please feel free to forward this announcement to any other appropriate lists. The OGC is an open standards organization; we encourage your feedback.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_purpose_of_the_standards_working_group"><a class="anchor" href="#_purpose_of_the_standards_working_group"></a>1. Purpose of the Standards Working Group</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For the purpose of this charter, <em>Data requirements</em> are the specifications describing datasets that a project needs to collect, store, analyze, and present to achieve the objectives of such a project. Datasets and their requirements are derived from the scope and objectives of the project and condition the feasibility of the results of the project. During a study on previous existing models for describing geospatial data requirements <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>, the authors of this charter were not able to identify any specific standard (in the OGC or in any other standardization body) which considers data requirements that focus on observations from the point of view of the user. The most applicable standard found was ISO 19131, that defines data product specifications from the point of view and level of detail of the producer. There is also the Analysis Ready Data (ARD) SWG that deals with product specifications (producer point of view) for a selected group of harmonized remote sensing products. The lack of data requirements from the point of view of the user needs description with focus on observations is identified as a gap and represents an opportunity for the <strong>Geospatial Observation and Needs and Requirements</strong> standardization.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this SWG is as follows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Develop open Standards that enable the robust, transparent, and consistent use of geospatial observation user needs and requirements and their FAIRness; and</p>
+</li>
+<li>
+<p>Set a common foundation that satisfies current developments on geospatial data requirements systems and enables interoperable new systems.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business_value_proposition"><a class="anchor" href="#_business_value_proposition"></a>2. Business value proposition</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Understanding data user requirements is a crucial initial step for producing data that fits its intended purpose. However, data providers often create geospatial datasets that they believe are feasible and useful, based on product specifications, but those providers might not completely know the real needs of users, resulting in reduced effective utilization of data. Requirements can be collected and utilized to define and provide a single data product or can be used to define a collection of datasets that cover a particular thematic domain.</p>
+</div>
+<div class="paragraph">
+<p>The Business value proposition of this SWG is as follows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Contribute to the creation of a marketplace where user needs are connected to data producers. This way, when a requirement for observations can not be covered with existing datasets or product specifications (e.g., air quality data is not updated every hour, so a pollutant plume cannot be tracked), data producers can fill the gaps in the current data products by deploying new sensors and extend their product specifications to satisfy user needs (e.g., a new Air quality dataset is produced every hour, just in case a pollution plume needs to be tracked);</p>
+</li>
+<li>
+<p>Specify a set of observations to be created, maintained, and curated to fulfill the needs of a community working in a particular thematic domain (for example, the Essential Climate Variable products are specified in terms of their spatial and temporal extent, resolution, lead-time, timeliness, review period, etc.); and</p>
+</li>
+<li>
+<p>Specify the sets of observations that a software process of model needs as an input.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Target users for this initiative are: Group on Earth Observations (GEO), Earth observation in-situ networks, Research infrastructures, users of observations (including scientists, innovators, modelers, digital twins, decision makers), and data providers (including cartographic institutes, public organizations, private companies, and data spaces).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scope_of_work"><a class="anchor" href="#_scope_of_work"></a>3. Scope of work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Scope of Work of the GONAR SWG encompasses the following activities.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identification of core needs for Geospatial Observation Needs And Requirements;</p>
+</li>
+<li>
+<p>Standardization of a data model to describe data and observational user need and requirements. While no preexisting standard is known to exist, some implementations of data requirements systems exist and will be used as a baseline to define a new OGC standard (see Section 3.3: Specific existing work used as starting point);</p>
+</li>
+<li>
+<p>Standardization of an OGC API to create, modify, retrieve, and delete descriptions of data needs and requirements. The group will study the possibility to associate a requirement to the concept of "feature" and use OGC API - Features or OGC API - Records as a baseline for the new OGC API;</p>
+</li>
+<li>
+<p>Promotion of the use of standardized requirements by data users (e.g., projects using observational data) and data producers; and</p>
+</li>
+<li>
+<p>Collaborate with other OGC Working Groups (such as MUDDI, WaterML, etc.) to test the generic approach for Geospatial Observation Needs And Requirements in their thematic areas.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In principle, the scope is restricted to requirements for "in-situ observations" as defined by The Group of Earth Observation. They are observations that does not come from a space based platform. This includes observations collected from diverse sources, regardless they are ground-, air-, and water-based sensors, field surveys, or citizen observatories. In that respect, data gathered by drones (UAVs) or planes are also considered as in-situ.</p>
+</div>
+<div class="sect2">
+<h3 id="_statement_of_relationship_of_planned_work_to_the_current_ogc_standards_baseline"><a class="anchor" href="#_statement_of_relationship_of_planned_work_to_the_current_ogc_standards_baseline"></a>3.1. Statement of relationship of planned work to the current OGC Standards baseline</h3>
+<div class="paragraph">
+<p>A data model for Geospatial Observation Needs And Requirements can be designed using metadata that describes the dataset. While metadata standards are not commonly defined by OGC, there are precedents of OGC standard reusing metadata and extending metadata such as the Catalogue Service for the Web (CSW) and Geospatial User Feedback (GUF).</p>
+</div>
+<div class="paragraph">
+<p>The planned work for GONAR will rely upon the existing OGC and ISO standards, such as the following.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ISO 191** metadata family, such as 19115 (OGC abstract Topic 11 - Metadata) and ISO 19131 (product specifications) as well as other metadata standards such as STAC, DCAT, and DCAT-AP;</p>
+</li>
+<li>
+<p>OGC abstract Topic 20 - Observations, Measurements, and Samples;</p>
+</li>
+<li>
+<p>Analysis Ready Data standards elaborated by the ARD SWG;</p>
+</li>
+<li>
+<p>OGC API - Records; and</p>
+</li>
+<li>
+<p>OGC Geospatial User Feedback.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_what_is_out_of_scope"><a class="anchor" href="#_what_is_out_of_scope"></a>3.2. What is out of scope?</h3>
+<div class="paragraph">
+<p>The following activities are out of scope for this GONAR SWG.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Define software or interfaces user requirements and its corresponding technical requirements;</p>
+</li>
+<li>
+<p>Define product specifications at the producer level;</p>
+</li>
+<li>
+<p>Define a list of domain specific geospatial data products; and</p>
+</li>
+<li>
+<p>Define another metadata standard to describe existing datasets.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In principle, the scope is restricted to in-situ observations as defined by The Group of Earth Observation as observations that does not come from a space based platform. It could be possible to encompass remote sensing space based observations in the future if the SWG finds it appropriate by extending this charter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_specific_existing_work_used_as_starting_point"><a class="anchor" href="#_specific_existing_work_used_as_starting_point"></a>3.3. Specific existing work used as starting point</h3>
+<div class="paragraph">
+<p>The reference work relevant for this GONAR SWG is the following.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copernicus In Situ Component Information System (CIS<sup>2</sup>) <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>;</p>
+</li>
+<li>
+<p>National Oceanic and Atmospheric Administration - User Observation Requirements Information <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>;</p>
+</li>
+<li>
+<p>USGS Requirements Capabilities &amp; Analysis for Earth Observations (RCA-EO) <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup>;</p>
+</li>
+<li>
+<p>World Meteorological Organization - Observing Systems Capability Analysis and Review Tool (WMO OSCAR/Requirements)<sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup> and ;</p>
+</li>
+<li>
+<p>Geospatial in-situ requirements (G-reqs) <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The intention of the group is to analyze and extract commonalities in the previous work as starting point for the new Standards.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_is_this_a_persistent_swg"><a class="anchor" href="#_is_this_a_persistent_swg"></a>3.4. Is this a persistent SWG</h3>
+<div class="paragraph">
+<p>[X] YES</p>
+</div>
+<div class="paragraph">
+<p>[ ] NO</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_when_can_the_swg_be_inactivated"><a class="anchor" href="#_when_can_the_swg_be_inactivated"></a>3.5. When can the SWG be inactivated</h3>
+<div class="paragraph">
+<p>When the two planned standards (needs and requirements model and OGC API) have been approved and there are not pending issues the group will be inactivated.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_description_of_deliverables"><a class="anchor" href="#_description_of_deliverables"></a>4. Description of deliverables</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_initial_deliverables"><a class="anchor" href="#_initial_deliverables"></a>4.1. Initial deliverables</h3>
+<div class="paragraph">
+<p>The deliverables to be included in the initial results of the GONAR SWG will be the following.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>provision of common standard needs and requirements model for Geospatial Observation Needs And Requirements; and</p>
+</li>
+<li>
+<p>make the Geospatial Observation Needs And Requirements FAIR by means of the new OGC APIs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This two deliverables will be done in sequence starting by defining the needs and requirements model for geospatial data and observations. The initial objective of the group is to be able to write the first complete standard draft in 9 months and present it to the OGC Architecture Board (OAB) for consideration. Once the needs and requirements for data and observations requirements is drafted and submitted to the OAB, the second deliverable will be started.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_additional_swg_tasks"><a class="anchor" href="#_additional_swg_tasks"></a>4.2. Additional SWG tasks</h3>
+<div class="paragraph">
+<p>No additional tasks are foreseen at this point.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ipr_policy_for_this_swg"><a class="anchor" href="#_ipr_policy_for_this_swg"></a>5. IPR Policy for this SWG</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>[x] RAND-Royalty Free</p>
+</div>
+<div class="paragraph">
+<p>[ ] RAND for fee</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_anticipated_audience_participants"><a class="anchor" href="#_anticipated_audience_participants"></a>6. Anticipated audience / participants</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Anyone that is involved in using observations and in-situ data in general in their activities that have previous experiences in defining potential datasets from the user point of view are invited to participate in this group.</p>
+</div>
+<div class="paragraph">
+<p>In particular, activities related with preparing observational data and processing data are welcome to contribute to this work. Examples are ARD and OGC API - Processes. Thematic DWGs and SWGs that know the needs of their communities can also usefully contribute such as MetOcean, MUDDI, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_domain_working_group_endorsement"><a class="anchor" href="#_domain_working_group_endorsement"></a>7. Domain Working Group endorsement</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Metadata and Catalogue DWG (MetaCat DWG) is proposed to endorse this group.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_informative_information_about_the_work_of_this_swg"><a class="anchor" href="#_other_informative_information_about_the_work_of_this_swg"></a>8. Other informative information about the work of this SWG</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_collaboration"><a class="anchor" href="#_collaboration"></a>8.1. Collaboration</h3>
+<div class="paragraph">
+<p>The SWG proposes to use GitHub as the collaboration environment for management of Standard document and related content and make the repository public.</p>
+</div>
+<div class="paragraph">
+<p>This draft was initially started in <a href="https://github.com/joanma747/CharterDataRequirements" class="bare">https://github.com/joanma747/CharterDataRequirements</a> and will be move to the "opengeospatial" GitHub as the work progresses.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_similar_or_applicable_standards_work_ogc_and_elsewhere"><a class="anchor" href="#_similar_or_applicable_standards_work_ogc_and_elsewhere"></a>8.2. Similar or applicable standards work (OGC and elsewhere)</h3>
+<div class="paragraph">
+<p>No international standards that are specific to observations and which consider the user perspective were identified.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_details_of_first_meeting"><a class="anchor" href="#_details_of_first_meeting"></a>8.3. Details of first meeting</h3>
+<div class="paragraph">
+<p>The SWG will meet within one month of approval of this charter.</p>
+</div>
+<div class="paragraph">
+<p>Previous to the first meeting, two ad-hoc sessions took place:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>128th OGC Members Meeting (March 2024) <a href="https://portal.ogc.org/index.php?m=projects&amp;a=view&amp;project_id=82&amp;tab=2&amp;artifact_id=107409" class="bare">https://portal.ogc.org/index.php?m=projects&amp;a=view&amp;project_id=82&amp;tab=2&amp;artifact_id=107409</a></p>
+</li>
+<li>
+<p>129th OGC Members Meeting (June 2024) <a href="https://portal.ogc.org/index.php?m=projects&amp;a=view&amp;project_id=82&amp;tab=2&amp;artifact_id=107891" class="bare">https://portal.ogc.org/index.php?m=projects&amp;a=view&amp;project_id=82&amp;tab=2&amp;artifact_id=107891</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_projected_on_going_meeting_schedule"><a class="anchor" href="#_projected_on_going_meeting_schedule"></a>8.4. Projected on-going meeting schedule</h3>
+<div class="paragraph">
+<p>The GONAR SWG will progress its work through:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Regular monthly online meetings; and</p>
+</li>
+<li>
+<p>Organization of SWG sessions at the OGC Member Meetings.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supporters_of_this_charter"><a class="anchor" href="#_supporters_of_this_charter"></a>8.5. Supporters of this Charter</h3>
+<div class="paragraph">
+<p>The following people support this proposal and are committed to the Charter and projected meeting schedule. These members are known as SWG Founding or Charter members. The charter members agree to the SoW and IPR terms as defined in this charter. The charter members have voting rights beginning the day the SWG is officially formed. Charter Members are shown on the public SWG page.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Organization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Joan Maso and Alba Brobia</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">CREAF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Alex Ramage</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Scottish Government</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Lucio Colaiacomo</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">SATCEN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">Claudio Iacopino</p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #FFFFFF;"><p class="tableblock">ESA</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Non-members of OGC also contributed this charter and plan to support the work, as follows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>European Environmental Agency</p>
+</li>
+<li>
+<p>Group of Earth Observations</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conveners"><a class="anchor" href="#_conveners"></a>8.6. Conveners</h3>
+<div class="paragraph">
+<p>Joan Maso and Alba Brobia are starting the SWG process but others are more than welcome.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>9. References</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See footnotes included in this document.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://doi.org/10.3390/rs15061589" class="bare">https://doi.org/10.3390/rs15061589</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://cis2.eea.europa.eu/about" class="bare">https://cis2.eea.europa.eu/about</a>
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. <a href="https://www.nesdis.noaa.gov/node/11226" class="bare">https://www.nesdis.noaa.gov/node/11226</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. <a href="https://www.usgs.gov/rca-eo/rca-eo" class="bare">https://www.usgs.gov/rca-eo/rca-eo</a>
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. <a href="https://space.oscar.wmo.int/observingrequirements" class="bare">https://space.oscar.wmo.int/observingrequirements</a>
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. <a href="https://doi.org/10.3390/rs15061589" class="bare">https://doi.org/10.3390/rs15061589</a>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2025-01-23 07:39:49 +0100
+</div>
+</div>
+</body>
+</html>
