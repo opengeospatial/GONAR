@@ -1,0 +1,12 @@
+{
+    "id": 3,
+    "needId": 126,
+    "projectId": 3,
+    "project": {
+        "id": 3,
+        "name": "AD4GD",
+        "description": "AD4GD’s mission is to co-create and shape the European Green Deal Data Space as an open hub for FAIR data and standards-based services that support the key priorities of pollution, biodiversity and climate change. Co-funded by the European Union, Switzerland and the United Kingdom. Grant agreement ID: 101061001.",
+        "logo": "https://ad4gd.eu/wp-content/uploads/2023/02/logointegrat-color.png",
+        "url": "https://ad4gd.eu/"
+    }
+}

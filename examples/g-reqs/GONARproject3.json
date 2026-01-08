@@ -1,0 +1,55 @@
+{
+    "id": "project3",
+	"type": "Feature",
+	"geometry": null,
+	"properties": {
+        "needId": 126,
+        "projectId": 3,
+        "title": "AD4GD",
+        "description": "AD4GD’s mission is to co-create and shape the European Green Deal Data Space as an open hub for FAIR data and standards-based services that support the key priorities of pollution, biodiversity and climate change. Co-funded by the European Union, Switzerland and the United Kingdom. Grant agreement ID: 101061001.",
+        "logo": "https://ad4gd.eu/wp-content/uploads/2023/02/logointegrat-color.png",
+        "url": "https://ad4gd.eu/"
+    }
+    "links": [
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue",
+          "rel": "service",
+          "title": "service offering this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/projects",
+          "rel": "collection",
+          "title": "collection containing this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/projects/items/project3?f=json",
+          "rel": "self",
+          "type": "application/geo+json",
+          "title": "this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/projects/items/project3?f=html",
+          "rel": "alternate",
+          "type": "text/html",
+          "title": "this record encoded as html"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/G-reqs/#/public/projects/3",
+          "rel": "alternate",
+          "type": "text/html",
+          "title": "this record as the EEA website in HTML"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/G-reqs-api/Projects/3",
+          "rel": "alternate",
+          "type": "application/json",
+          "title": "this record as the EEA propietary API in HTML"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/needs/items/need146?f=json",
+          "rel": "related",
+          "type": "application/json",
+          "title": "the need related to this requirement in JSON"
+        }
+    ]    
+}

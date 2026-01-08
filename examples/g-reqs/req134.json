@@ -1,0 +1,85 @@
+{
+  "id": 134,
+  "needId": 146,
+  "pointOfContactId": 166,
+  "name": "stand level above ground biomass ",
+  "description": "estimates of AGB from measurement of tree by tree diameter at breast height and tree species for 1ha field plots ",
+  "essentialVariable": "Above-ground Biomass",
+  "essentialVariableUri": "https://gcos.wmo.int/en/essential-climate-variables/biomass/",
+  "thematicUncertaintyMin": 10,
+  "thematicUncertaintyMax": 30,
+  "thematicUncertaintyUnitMeasure": "%",
+  "updateFrequencyMin": 5,
+  "updateFrequencyMinUnitMeasureId": 1,
+  "updateFrequencyMax": 10,
+  "updateFrequencyMaxUnitMeasureId": 1,
+  "timelinessMin": 1,
+  "timelinessMinUnitMeasureId": 1,
+  "timelinessMax": 2,
+  "timelinessMaxUnitMeasureId": 1,
+  "evenDistribution": "Distribution is uneven following spatial gradients and forest types. ",
+  "coordinatedMeasure": "meteorologic data, precise coordinates",
+  "representabilityRadiusMin": null,
+  "representabilityRadiusMax": null,
+  "representabilityRadiusUnitMeasureId": null,
+  "horizontalResolutionMin": null,
+  "horizontalResolutionMax": null,
+  "horizontalResolutionUnitMeasureId": null,
+  "verticalResolutionMin": null,
+  "verticalResolutionMax": null,
+  "verticalResolutionUnitMeasureId": null,
+  "completelyFittingDataset": "data.geo-trees.org",
+  "partialFittingDataset": "",
+  "reasonPartialFitting": "",
+  "citizenScienceAcceptance": null,
+  "userRequirementsVariableClasses": [
+    {
+      "id": 250,
+      "userRequirementId": 134,
+      "variableClassId": 6,
+      "variableClass": {
+        "id": 6,
+        "code": "Terrestrial (ECV)"
+      }
+    }
+  ],
+  "userRequirementsDataAccesses": [
+    {
+      "id": 216,
+      "userRequirementId": 134,
+      "dataAccessId": 4,
+      "dataAccess": {
+        "id": 4,
+        "code": "View and Download Service (OGC)"
+      }
+    },
+    {
+      "id": 217,
+      "userRequirementId": 134,
+      "dataAccessId": 7,
+      "dataAccess": {
+        "id": 7,
+        "code": "API"
+      }
+    }
+  ],
+  "representabilityRadiusUnitMeasure": null,
+  "horizontalResolutionUnitMeasure": null,
+  "verticalResolutionUnitMeasure": null,
+  "updateFrequencyMinUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  },
+  "updateFrequencyMaxUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  },
+  "timelinessMinUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  },
+  "timelinessMaxUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  }
+}
