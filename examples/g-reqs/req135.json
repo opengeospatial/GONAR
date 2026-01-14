@@ -1,0 +1,85 @@
+{
+  "id": 135,
+  "needId": 146,
+  "pointOfContactId": 166,
+  "name": "landscape above ground biomass",
+  "description": "estimates of AGB from airborne laser scans and plot based estimates for 1000 km2 areas ",
+  "essentialVariable": "Above-ground Biomass",
+  "essentialVariableUri": "https://gcos.wmo.int/en/essential-climate-variables/biomass",
+  "thematicUncertaintyMin": 10,
+  "thematicUncertaintyMax": 30,
+  "thematicUncertaintyUnitMeasure": "%",
+  "updateFrequencyMin": 5,
+  "updateFrequencyMinUnitMeasureId": 1,
+  "updateFrequencyMax": 10,
+  "updateFrequencyMaxUnitMeasureId": 1,
+  "timelinessMin": 1,
+  "timelinessMinUnitMeasureId": 1,
+  "timelinessMax": 2,
+  "timelinessMaxUnitMeasureId": 1,
+  "evenDistribution": "Distribution is uneven following spatial gradients and forest types. ",
+  "coordinatedMeasure": "meteorologic data",
+  "representabilityRadiusMin": null,
+  "representabilityRadiusMax": null,
+  "representabilityRadiusUnitMeasureId": null,
+  "horizontalResolutionMin": null,
+  "horizontalResolutionMax": null,
+  "horizontalResolutionUnitMeasureId": null,
+  "verticalResolutionMin": null,
+  "verticalResolutionMax": null,
+  "verticalResolutionUnitMeasureId": null,
+  "completelyFittingDataset": "data.geo-trees.org",
+  "partialFittingDataset": "",
+  "reasonPartialFitting": "",
+  "citizenScienceAcceptance": null,
+  "userRequirementsVariableClasses": [
+    {
+      "id": 251,
+      "userRequirementId": 135,
+      "variableClassId": 6,
+      "variableClass": {
+        "id": 6,
+        "code": "Terrestrial (ECV)"
+      }
+    }
+  ],
+  "userRequirementsDataAccesses": [
+    {
+      "id": 218,
+      "userRequirementId": 135,
+      "dataAccessId": 4,
+      "dataAccess": {
+        "id": 4,
+        "code": "View and Download Service (OGC)"
+      }
+    },
+    {
+      "id": 219,
+      "userRequirementId": 135,
+      "dataAccessId": 7,
+      "dataAccess": {
+        "id": 7,
+        "code": "API"
+      }
+    }
+  ],
+  "representabilityRadiusUnitMeasure": null,
+  "horizontalResolutionUnitMeasure": null,
+  "verticalResolutionUnitMeasure": null,
+  "updateFrequencyMinUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  },
+  "updateFrequencyMaxUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  },
+  "timelinessMinUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  },
+  "timelinessMaxUnitMeasure": {
+    "id": 1,
+    "code": "year"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": 146,
+  "pointOfContactId": 166,
+  "timestamp": "2024-11-27T00:00:00",
+  "temporalExtentFrom": 2000,
+  "temporalExtentTo": null,
+  "stateId": 2,
+  "gwpActivityId": 31,
+  "areaId": 1,
+  "subarea": null,
+  "processToRealize": "directly compare in-situ estimates of above ground forest biomass with satellite derived estimates.",
+  "criticalityId": 2,
+  "needTypeId": 4,
+  "needTypeDescription": "Validation of remotely sensed forest biomass maps",
+  "relatedProduct": "global above ground biomass maps",
+  "state": {
+    "id": 2,
+    "code": "Reviewed"
+  },
+  "gwpActivity": {
+    "id": 31,
+    "wpActivity": "WP23_25: Forest Biomass Reference System from Tree-by-Tree Inventory Data (GEO-TREES)",
+    "code": "GEO Pilot Initiatives",
+    "reference": "2325031",
+    "isActive": false
+  },
+  "area": {
+    "id": 1,
+    "code": "Global"
+  },
+  "criticality": {
+    "id": 2,
+    "code": "Essential"
+  },
+  "needType": {
+    "id": 4,
+    "code": "Remote Sensing CalVal",
+    "description": null
+  },
+  "needsProjects": []
+}

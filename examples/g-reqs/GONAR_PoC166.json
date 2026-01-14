@@ -1,0 +1,56 @@
+{
+	"id": "req135",
+	"type": "Feature",
+	"geometry": null,
+	"properties": {
+		  "id": 166,
+		  "name": null,
+		  "email": null,
+		  "organization": "European Space Agency",
+		  "organizationUrl": "esa.int",
+		  "position": null,
+		  "feedback": null
+	}
+      "links": [
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue",
+          "rel": "service",
+          "title": "service offering this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/pocs",
+          "rel": "collection",
+          "title": "collection containing this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/pocs/items/poc166?f=json",
+          "rel": "self",
+          "type": "application/geo+json",
+          "title": "this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/pocs/items/poc166?f=html",
+          "rel": "alternate",
+          "type": "text/html",
+          "title": "this record encoded as html"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/G-reqs/#/public/points-of-contact/166",
+          "rel": "alternate",
+          "type": "text/html",
+          "title": "this record as the EEA website in HTML"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/G-reqs-api/PointsOfContact/146",
+          "rel": "alternate",
+          "type": "application/json",
+          "title": "this record as the EEA propietary API in HTML"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/needs/items/need146?f=json",
+          "rel": "related",
+          "type": "application/json",
+          "title": "the need related to this requirement in JSON"
+        },
+      ]	
+}   

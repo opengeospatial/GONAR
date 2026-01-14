@@ -1,0 +1,93 @@
+{
+	"id": "need146",
+	"type": "Feature",
+	"geometry": null,
+	"properties": {
+		  "pointOfContactId": 166,
+		  "timestamp": "2024-11-27T00:00:00",
+		  "temporalExtentFrom": 2000,
+		  "temporalExtentTo": null,
+		  "stateId": 2,
+		  "gwpActivityId": 31,
+		  "areaId": 1,
+		  "subarea": null,
+		  "processToRealize": "directly compare in-situ estimates of above ground forest biomass with satellite derived estimates.",
+		  "criticalityId": 2,
+		  "needTypeId": 4,
+		  "needTypeDescription": "Validation of remotely sensed forest biomass maps",
+		  "relatedProduct": "global above ground biomass maps",
+		  "state": {
+			"id": 2,
+			"code": "Reviewed"
+		  },
+		  "gwpActivity": {
+			"id": 31,
+			"wpActivity": "WP23_25: Forest Biomass Reference System from Tree-by-Tree Inventory Data (GEO-TREES)",
+			"code": "GEO Pilot Initiatives",
+			"reference": "2325031",
+			"isActive": false
+		  },
+		  "area": {
+			"id": 1,
+			"code": "Global"
+		  },
+		  "criticality": {
+			"id": 2,
+			"code": "Essential"
+		  },
+		  "needType": {
+			"id": 4,
+			"code": "Remote Sensing CalVal",
+			"description": null
+		  },
+		  "needsProjects": []
+	  },
+      "links": [
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue",
+          "rel": "service",
+          "title": "service offering this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/needs",
+          "rel": "collection",
+          "title": "collection containing this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/needs/items/need146?f=json",
+          "rel": "self",
+          "type": "application/geo+json",
+          "title": "this record"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/needs/items/need146?f=html",
+          "rel": "alternate",
+          "type": "text/html",
+          "title": "this record encoded as html"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/G-reqs/#/public/needs/146",
+          "rel": "alternate",
+          "type": "text/html",
+          "title": "this record as the EEA website in HTML"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/G-reqs-api/Needs/146",
+          "rel": "alternate",
+          "type": "application/json",
+          "title": "this record as the EEA propietary API in HTML"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/pocs/items/poc166?f=json",
+          "rel": "author",
+          "type": "application/json",
+          "title": "the point of contact of this requirement in JSON"
+        },
+        {
+          "href": "https://discomap.eea.europa.eu/EuroGEO/ogcapi/catalogue/collections/reqs/items/req135?f=json",
+          "rel": "related",
+          "type": "application/json",
+          "title": "the requirement related to this need in JSON"
+        }
+      ]
+}
