@@ -4,15 +4,23 @@
 
 The OGC API standards family includes a set of resources that enable anyone to provide or use geospatial information. These APIs primarily describe the publication and access to data (e.g. features, coverages), although they may also reference metadata (i.e. records).
 
-This Standard takes a step further by defining the OGC API - Requirements, which builds upon the concept of OGC API - Records. OGC API - Records is designed to catalogue metadata records. Commonly these records managed by the OGC API records contain metadata associated with resources created by the producer and from the producer's point of view. In contrast, OGC API - Requirements specifies how use the same OGC API Records to provide the users perspective allowing them to describe datasets that a project needs to collect, store, analyze, and present to achieve the project objectives, known as data user requirements. User requirements can be provided on any resource in the same OGC API instance or in other OGC API implementations, whether a geospatial collection or a metadata record in a OGC API Records collection.
+This Standard takes a step further by defining the OGC API - Requirements, which builds upon the concept of OGC API - Records. OGC API - Records is designed to catalogue metadata records. Commonly these records managed by the OGC API records contain metadata associated with resources created by the producer and from the producer's point of view. In contrast, OGC API - Requirements specifies how to use the same OGC API Records to provide the users perspective allowing them to describe datasets that a project needs to collect, store, analyze, and present to achieve the project objectives, known as user requirements. User requirements can be provided on any resource in the same OGC API instance or in other OGC API implementations, whether a geospatial collection or a metadata record in a OGC API Records collection.
+
+//Accordingly, this OGC API - Feedback uses the following components defined in the OGC Geospatial User Feedback standard:
+//* a feedback item
+//* a feedback collection (that acts as a feedback catalog)
+//* a feedback statistic
 
 Accordingly, this OGC API - Requirements uses the following elements:
+* a point of contact item
 * a point of contact collection (that acts as a point of contact catalog)
+* a need item
 * a need collection (that acts as a need catalog)
+* a requirement item
 * a requirement collection (that acts as a requirement catalog)
 
 //Thus, a _feedback item_ is the atomic unit of information within a collection, just as a record is in OGC API - Records.  
-Thus, each collection corresponds to a catalog, just as a catalog is in OGC API - Records.  
+Thus, the _point of contact item_, the _need item_ and the _requirement item_ are the atomic units of information within the respective collections. Thus, each group of items corresponds to a collection that corresponds to a catalog, just as a catalog is in OGC API - Records.
 
 This standard defines
 * a common set of query parameters
@@ -46,10 +54,16 @@ The following tables lists the endpoints of the OGC API - Requirements that allo
 |Conformance declaration |`/conformance` |GET | https://docs.ogc.org/is/20-004r1/20-004r1.html#conformance_class[Declaration of conformance]
 |Point of Contact collections |`/collections` |GET | Point of Contact collections
 |Point of Contact collection |`/collections/{collectionId}` |GET | Point of Contact collection
+|Point of Contact items |`/collections/{collectionId}/items` |GET |Points of Contact
+|Point of Contact item |`/collections/{collectionId}/items/{itemId}` |GET |Point of Contact
 |Need collections |`/collections` |GET | Need collections
 |Need collection |`/collections/{collectionId}` |GET | Need collection
+|Need items |`/collections/{collectionId}/items` |GET |Needs
+|Need item |`/collections/{collectionId}/items/{itemId}` |GET |Need
 |Requirement collections |`/collections` |GET | Requirement collections
 |Requirement collection |`/collections/{collectionId}` |GET | Requirement collection
+|Requirement items |`/collections/{collectionId}/items` |GET |Requirements
+|Requirement item |`/collections/{collectionId}/items/{itemId}` |GET |Requirement
 |===
 
 //$$ TODO: en aquesta taula cal modificar els links a les seccions que toqui
