@@ -8,12 +8,6 @@ The following normative documents contain provisions that, through reference in 
 
 //References are to follow the Springer LNCS style, with the exception that optional information may be appended to references: DOIs are added after the date and web resource references may include an access date at the end of the reference in parentheses. See examples from Springer and OGC below.
 
-* [[[ISO19115-1, ISO 19115-1:2014]]], _Geographic information -- Metadata -- Part 1: Fundamentals_
-
-* [[[ISO19157, ISO 19157:2013]]], _Geographic information -- Data quality_
-
-* [[[OGC23-017, OGC 23-017]]], _OGC Geospatial User Feedback Standard: Conceptual Model v.2.0_
-
 * [[[OGC20-004, OGC 20-004]]], _OGC API - Records -Part 1: Core_
 
 * [[[OGC17-069r4, OGC 17-069r4]]], _OGC API - Features - Part 1: Core corrigendum_

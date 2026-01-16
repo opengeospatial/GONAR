@@ -1,32 +1,28 @@
 == SCOPE
 
 For the purposes of this Standard, the following definitions apply:
-* Standard requirements: The modular specification divides the standards into requirements classes that contain 1 or more requirements/recommendations/permissions. 
-* Data user requirements: The metadata describing the characteristics of a geospatial resource (dataset or product) that may not exist yet.
+* _Standard requirement_: The modular specification divides the standards into requirements classes that contain 1 or more requirements/recommendations/permissions. 
+* _Data requirement_: Metadata describing the characteristics of a geospatial resource (dataset or product) that the user want to get, even if the dataset or product may not exist yet.
 
 //The OGC API - Feedback Standard specifies requirement classes for manage descriptive information provided by users (user feedback) about geospatial resources.
-The OGC API - Requirements Standard specifies requirement classes for manage technical descriptions provided by users about target geospatial resources (user requirements).
+The OGC API - Requirements Standard specifies _requirement classes_ for manage _data requirement_ (technical descriptions) provided by users about target geospatial resources.
 
 //On one hand, a feedback item is the atomic unit of information within a user feedback collection (the equivalent to a user feedback catalogue). It contains metadata provided by users about a specific geospatial resource (e.g. a OGC API collection) or a metadata record. As defined in the OGC Geospatial User Feedback Standard: Conceptual Model. v.2.0, a user feedback item may include user comments, questions and answers, reports of dataset issues and proposed solutions, ratings, usage reports, reproducible usage reports, citations of related datasets or publications describing usage, quality reports, relevant additional provenance information, and significant events related to the use or interpretation of a dataset.
 
-The _point of contact item_, the _need item_ and the _requirement item_ are the atomic units of information within the respective collections within the OGC API - Requirements Standard. Since all items can be grouped into collections, this standard also specifies the endpoints dedicated to retrieve summary information about the items contained in a collection. Thus, each group of items corresponds to a collection (the equivalent to a catalogue) within the OGC API - Requirements Standard.
+The _point of contact item_, the _need item_, the _requirement item_ and the _project item_ are the atomic units of information within the respective collections within the OGC API - Requirements Standard. Each group of items corresponds to a collection (the equivalent to a catalogue) within the OGC API - Requirements Standard.
 
 //On the other hand, since user feedback items can be grouped into feedback collections, this standard also specifies the "stats" endpoint, which is dedicated to retrieve summary information about the user feedback items contained in a user feedback collection.
 
-A point of contact (i.e. a user) is the primary collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. It can be grouped into point of contact collections.
+A _point of contact_ (i.e. a user) is the first collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. They are grouped into point of contact collections.
 
-A need (i.e. a problem or issue to be addressed by using geospatial data) is the second possible collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. It can be grouped into need collections. 
+A need (i.e. a problem or issue to be addressed by using geospatial data) is the second possible collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. They are grouped into need collections. 
 
-A requirement (i.e. a concrete technical description of the properties of a potential geospatial dataset that will fulfil the need.) is the third possible collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. It can be grouped into requirement collections.
+A data requirement (i.e. a concrete technical description of the properties of a potential geospatial dataset that will fulfil the need) is the third possible collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. They are grouped into data requirement collections.
 
-One point of contact can document 1 or more needs. A need can be translated into 1 or more user requirements (relation 1..*).
+A project (i.e. the context where the need is generated) is the forth possible collection (the equivalent to a catalogue) within the OGC API - Requirements Standard. They are grouped into data requirement collections.
+
+One point of contact can document 1 or more needs. A need can be translated into 1 or more user requirements (relation 1..*). A project can be associated to 1 to many points of contact, 1 or many need and 1 or many requirements.
 
 //The OGC API - Feedback Standard uses and extends on OGC API - Records to describe how user feedback collections can be crawled or searched. Crawling a user feedback collection involves following embedded links from one user feedback item (in a collection) to the next item. Searching a collection of user feedback items involves specifying query predicates that retrieves a subset of user feedback items.
 
-The OGC API - Requirements Standard uses and extends on OGC API - Records to describe how user requirements collections can be crawled or searched. Crawling a user requirement collection involves following embedded links from one item (in a collection) to the next item. Searching a collection of user requirement items involves specifying query predicates that retrieves a subset of user requirement items.
-
-
-
-
-
-
+The OGC API - Requirements Standard uses and extends on OGC API - Records to describe how points of contact, needs, data requirements and project collections can be crawled or searched. Crawling a collection involves following embedded links from one item (in a collection) to the next item. Searching a collection of items involves specifying query predicates that retrieves a subset of items.
