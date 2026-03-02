@@ -12,35 +12,27 @@ This Standard takes a step further by defining the OGC API - Requirements, which
 //* a feedback statistic
 
 Accordingly, this OGC API - Requirements manages the following resources:
-* points of contact (items and collections)
+
+//* points of contact (items and collections)
 * needs (items and collections)
 * data requirements (items and collections)
-* projects (items and collections)
+//* projects (items and collections)
 
 //Thus, a _feedback item_ is the atomic unit of information within a collection, just as a record is in OGC API - Records.  
-Thus, the _point of contact item_, the _need item_, the _data requirement item_ and the _project item_ are the atomic units of information within the respective collections. Thus, each group of items corresponds to a collection that corresponds to a catalog, just as a catalog is in OGC API - Records.
+Thus, the 
+//_point of contact item_, 
+the _need item_, and the _data requirement item_ 
+//and the _project item_ 
+are the atomic units of information within the respective collections. Thus, each group of items corresponds to a collection that corresponds to a catalog, just as a catalog is in OGC API - Records.
 
-This standard defines
+This standard defines:
+
 * a common set of query parameters
 * the characteristics for implementing a data requirements Web API following the OGC API - Requirements.
 
-The OGC API - Requirements allows not only the HTTP GET method for queries, but also adopts from OGC API - Features - Part 4 the capabilities for creating, modifying and deleting collections using HTTP POST, PUT, PATCH, and DELETE methods.
+The OGC API - Requirements allows not only the HTTP GET method for queries, but also adopts from OGC API - Features - Part 4 (and the OGC API - Records - Part 3) the capabilities for creating, modifying and deleting needs or requirements using HTTP POST, PUT, PATCH, and DELETE methods.
 
-The following tables lists the endpoints of the OGC API - Requirements that allow any collection to be searched or to be interacted with:
-
-//[#fm_1,reftext='{table-caption} {counter:table-num}']
-//.Overview of resources endpoints and responses
-//[cols="32,25,10,33",options="header"]
-//|===
-//|Resource |Path |HTTP method |Document reference
-//|Landing page |`/` |GET | https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[API landing page]
-//|Conformance declaration |`/conformance` |GET | https://docs.ogc.org/is/20-004r1/20-004r1.html#conformance_class[Declaration of conformance]
-//|Feedback collections |`/collections` |GET | User Feedback collections
-//|Feedback collection |`/collections/{collectionId}` |GET | User Feedback collection
-//|Feedback items |`/collections/{collectionId}/items` |GET |Users Feedbacks
-//|Feedback item |`/collections/{collectionId}/items/{itemId}` |GET |User Feedback
-//|Feedback summary |`/collections/{collectionId}/stats` |GET |summary of user feedbacks 
-//|===
+The following tables lists the endpoints of the OGC API - Requirements that allow collections of data needs and data requirements to be searched or to be interacted with:
 
 [#fm_1,reftext='{table-caption} {counter:table-num}']
 .Overview of resources endpoints and responses
@@ -49,46 +41,45 @@ The following tables lists the endpoints of the OGC API - Requirements that allo
 |Resource |Path |HTTP method |Document reference
 |Landing page |`/` |GET | https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[API landing page]
 |Conformance declaration |`/conformance` |GET | https://docs.ogc.org/is/20-004r1/20-004r1.html#conformance_class[Declaration of conformance]
+|Need collections |`/collections` |GET | Need collections
+|Need collection |`/collections/{collectionId}` |GET | Need collection
+|Need items^1^ |`/collections/{collectionId}/items` |GET |Needs
+|Need item |`/collections/{collectionId}/items/{itemId}` |GET |Need
+|Data requirement collections |`/collections` |GET |Data requirement collections
+|Data requirement collection |`/collections/{collectionId}` |GET |Data requirement collection
+|Data requirement items^2^ |`/collections/{collectionId}/items` |GET |Data requirements
+|Data requirement item |`/collections/{collectionId}/items/{itemId}` |GET |Data requirement
+4+| ^1^ The metadata of the collection specifies itemType=record conformsTo=http://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs
+The id of the collection that contains needs is unspecified. (However all examples in this document will use {collectionId}=needs) +
+^2^ The metadata of the collection specifies itemType=record conformsTo=http://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements. The id of the collection that contains requirements is unspecified. (However all examples in this document will use {collectionId}=requirements)
+|===
+
+////
+We decided to ignore the G-REQS implementation of PoC and Project collections.
 |Point of contact collections |`/collections` |GET | Point of Contact collections
 |Point of contact collection |`/collections/{collectionId}` |GET | Point of Contact collection
 |Point of contact items |`/collections/{collectionId}/items` |GET |Points of Contact
 |Point of contact item |`/collections/{collectionId}/items/{itemId}` |GET |Point of Contact
-|Need collections |`/collections` |GET | Need collections
-|Need collection |`/collections/{collectionId}` |GET | Need collection
-|Need items |`/collections/{collectionId}/items` |GET |Needs
-|Need item |`/collections/{collectionId}/items/{itemId}` |GET |Need
-|Data requirement collections |`/collections` |GET |Data requirement collections
-|Data requirement collection |`/collections/{collectionId}` |GET |Data requirement collection
-|Data requirement items |`/collections/{collectionId}/items` |GET |Data requirements
-|Data requirement item |`/collections/{collectionId}/items/{itemId}` |GET |Data requirement
 |Project collections |`/collections` |GET | Project collections
 |Project collection |`/collections/{collectionId}` |GET | Project collection
 |Project items |`/collections/{collectionId}/items` |GET |Projects
 |Project item |`/collections/{collectionId}/items/{itemId}` |GET |Project
-|===
+////
 
-In a simple case where the Web API has only one instance of the mentioned collections, the Point of contact collection will have `PoC` as collectionId, the Need collection will have `Need` as collectionId, Data requirement collection will have `Requirement` as a collectionId and Project collection will have `Project` as a collectionId. 
-
-//$$ TODO: en aquesta taula cal modificar els links a les seccions que toqui
-
-//[#fm_2,reftext='{table-caption} {counter:table-num}']
-//.Additional supported HTTP methods by resource
-//[cols="32,10,10,10,10",options="header"]
-//|===
-//|Resource endpoint 4+| HTTP method
-//| | POST | PUT | PATCH | DELETE
-//|`/collections/{collectionId}/items`| create |n/a |n/a |n/a |n/a
-//|`/collections/{collectionId}/items/{itemId}`| n/a|replace, create|update |update (partial)| delete
-//|===
+In a simple case where the Web API has only one instance of the mentioned collections, the implementation may decided to have 
+//the Point of contact collection will have `PoC` as collectionId, 
+a Need collection with `Need` as a collectionId, and Data requirement collection will `Requirement` as a collectionId.
+//and Project collection will have `Project` as a collectionId. 
 
 [#fm_2,reftext='{table-caption} {counter:table-num}']
-.Additional supported HTTP methods by resource
+.Additional supported HTTP methods for creating/modifying/deleting a need or a requirement
 [cols="32,10,10,10,10",options="header"]
 |===
-|Resource endpoint 4+| HTTP method
+|Need or requirement^1^ endpoint 4+| HTTP method
 | | POST | PUT | PATCH | DELETE
-|`/collections/{collectionId}/items`| create |n/a |n/a |n/a |n/a
-|`/collections/{collectionId}/items/{itemId}`| n/a|replace, create|update |update (partial)| delete
+|`/collections/{collectionId}/items`| create |n/a |n/a |n/a
+|`/collections/{collectionId}/items/{itemId}`|n/a|replace, create|update (partial)| delete
+5+|^1^ The action is for a requirement or for a need depending on the /collections/{collectionId} nature. For example, if the /collections/{collectionId} description indicates conformsTo=http://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs the two rows should be interpreted as an action to a need.
 |===
 
 //Note that statistics cannot be created/modified/deleted and they are expected to be generated automatically by the server.
@@ -160,9 +151,9 @@ All questions regarding this submission should be directed to the editors or the
 |===
 |*Name* |*Affiliation*
 | Joan Masó | UAB-CREAF
+| Alba Brobia | UAB-CREAF
 | Alaitz Zabala | UAB-CREAF
 | Oscar González-Guerrero | UAB-CREAF
-| Alba Brobia | UAB-CREAF
 |===
 
 //== Contributors

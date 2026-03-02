@@ -1,19 +1,18 @@
-= OGC API Feedback
+= OGC API Requirements
 :doctype: standard
 :encoding: utf-8
 :lang: en
 //:status: 
 :committee: technical
-:draft: 2.0
-:external-id: http://www.opengis.net/spec/ogcapi-feedback-2/2.0
+:draft: 1.0
+:external-id: http://www.opengis.net/spec/ogcapi-requirements-1/1.0
 :docnumber: 25-XXX
 :received-date: 2029-03-30
 :issued-date: 2029-03-30
 :published-date: 2029-03-30
-:fullname: Alaitz Zabala
-:fullname_2: Joan Masó
-:fullname_3: Oscar González
-:docsubtype: conceptual-model
+:fullname: Joan Masó
+:fullname_2: Alba Brobia
+:docsubtype: implementation
 :keywords: ogcdoc, OGC document, API, openapi, html
 :submitting-organizations: UAB-CREAF
 :mn-document-class: ogc
