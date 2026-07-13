@@ -1,4 +1,5 @@
 == Conformance
+GONAR !!
 This Standard defines four requirements classes and four related conformance classes.
 
 Requirements for standardization targets are considered.

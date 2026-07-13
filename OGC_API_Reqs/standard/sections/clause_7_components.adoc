@@ -10,13 +10,13 @@ A Need Collection is a specific case of a Records Collection and, therefore, com
 In this section, only the elements that differentiate the OGC API – Requirements from the https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records] are described.
 
 [[needs-item]]
-=== Requirements Class "Needs" (Component)
+=== Requirements Class "Collections" (Component)
 
 ==== Overview
 
 include::../requirements/requirements_class_needs_item.adoc[]
 
-The Need Item requirements class defines how the GONAR conceptual model is combined with the Record data model described in section 7.2 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records]. A _Need Item_ is the container of the actual needs.
+The Need requirements class defines how the GONAR conceptual model is combined with the Record data model described in section 7.2 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records]. A _Need Item_ is the container of the actual needs.
 
 The Need requirements Class defines the requirements for a _Need Item_, which is the atomic unit of information of a _Needs Collection_. It follows the instructions described in recommendation /rec/record-core/extensions in section 7.2.3 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records].
 
@@ -24,7 +24,7 @@ Although this Standard does not mandate any particular encoding for a Need Item 
 
 [[fb_item_props]]
 ==== Properties
-The properties of a record that contains needs uses the GONAR conceptual model for the Needs Item $$$as described in section 7.2 of OGC GONAR Standard: Conceptual Model$$$. The following table maps the properties defined in OGC API - Records section 7.2 with the GONAR Needs item. 
+The properties of a record that contains needs uses the GONAR data model for the Needs Item $$$as described in section 7.2 of OGC GONAR Standard: Data Model$$$. The following table maps the properties defined in OGC API - Records section 7.2 with the GONAR Needs item. 
 
 [#tbl_record_need_item,reftext='{table-caption} {counter:table-num}']
 .Need Item
@@ -77,7 +77,7 @@ include::../requirements/need-item/mandatory-properties.adoc[]
 
 ==== Overview
 
-include::../requirements/requirements_class_user_feedback_collection.adoc[]
+include::../requirements/requirements_class_need_collection.adoc[]
 
 The Need Collection requirements class is a specific implementation of the record collection defined in the https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-record-collection[OGC API - Records Standard] (Section 7.3) that is applicable to collections that contains user feedback (a.k.a. feedback catalog) where a conformsTo property takes the value "http://www.opengis.net/spec/ogcapi-feedback-2/2.0/conf/feedback" to indicate that all elements in the collection follow the <<feedback_item, User Feedback Item>> requirements.
 

@@ -1,0 +1,8 @@
+[[req_data-model_data-requirement]]
+[requirement]
+
+====
+[%metadata]
+identifier:: /req/data-model/data-requirement
+part:: The implementations of a data requirement SHALL follow the UML model as shown in <<img_data_requirement>> with the properties specified in <<tbl_data_requirement>> or an extension of it.
+====
