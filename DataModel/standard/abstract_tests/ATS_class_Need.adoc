@@ -1,0 +1,13 @@
+[[ats_example1]]
+//[conformance_class_example1]
+[conformance_class]
+====
+[%metadata]
+identifier:: http://www.opengis.net/spec/guf-conceptual/2.0/conf/feedback-collection
+target:: https://www.opengis.net/spec/guf-conceptual/2.0/req/feedback-collection
+//label:: http://www.opengis.net/spec/guf-conceptual/2.0/conf/feedback-collection
+subject:: Conformance Class "Feedback collection"
+classification:: Target Type:Web API
+conformance-test:: /conf/feedback-collection/response
+====
+

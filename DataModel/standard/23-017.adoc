@@ -1,0 +1,63 @@
+= OGC Geospatial Observatinos Needs and Requirements (GONAR) Standard: Data Model.
+:doctype: standard
+:encoding: utf-8
+:lang: en
+:status: approved
+:committee: technical
+:draft: 1.0
+:external-id: http://www.opengis.net/doc/IS/gonar-data-model/1.0
+:docnumber: yy-nnn
+:received-date: 2025-02-25
+:issued-date: 2025-10-13
+:published-date: 2029-03-30
+:fullname: Alba Brobia
+:fullname_2: Joan Masó
+:docsubtype: logical-model
+:keywords: ogcdoc, OGC document, API, openapi, html
+:submitting-organizations: UAB-CREAF
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf,png
+:local-cache-only:
+:data-uri-image:
+:pdf-uri: ./document.pdf
+:xml-uri: ./document.xml
+:doc-uri: ./document.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+include::sections/clause_0_front_material.adoc[]
+
+include::sections/clause_1_scope.adoc[]
+
+include::sections/clause_2_conformance.adoc[]
+
+include::sections/clause_3_references.adoc[]
+
+include::sections/clause_4_terms_and_definitions.adoc[]
+
+include::sections/clause_5_conventions.adoc[]
+
+include::sections/clause_6_informative_text.adoc[]
+
+include::sections/clause_7_need.adoc[]
+
+include::sections/clause_8_user_requirement.adoc[]
+
+//include::sections/clause_8_media_types.adoc[]
+
+////
+add or remove annexes after "A" as necessary
+////
+include::sections/annex-a.adoc[]
+
+//include::sections/annex-n.adoc[]
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+include::sections/annex-history.adoc[]
+
+include::sections/annex-bibliography.adoc[]

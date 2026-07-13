@@ -1,0 +1,10 @@
+[[rc_user_feedback_collection]]
+
+[requirements_class]
+====
+[%metadata]
+identifier:: https://www.opengis.net/spec/guf-conceptual/2.0/req/needs-collection
+subject:: Document model
+inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
+requirement:: /req/feedback-collection/mandatory-properties-collection
+====

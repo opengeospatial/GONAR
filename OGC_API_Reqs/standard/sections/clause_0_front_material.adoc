@@ -49,9 +49,9 @@ The following tables lists the endpoints of the OGC API - Requirements that allo
 |Data requirement collection |`/collections/{collectionId}` |GET |Data requirement collection
 |Data requirement items^2^ |`/collections/{collectionId}/items` |GET |Data requirements
 |Data requirement item |`/collections/{collectionId}/items/{itemId}` |GET |Data requirement
-4+| ^1^ The metadata of the collection specifies itemType=record conformsTo=http://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs
+4+| ^1^ The metadata of the collection specifies itemType=record conformsTo=https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs
 The id of the collection that contains needs is unspecified. (However all examples in this document will use {collectionId}=needs) +
-^2^ The metadata of the collection specifies itemType=record conformsTo=http://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements. The id of the collection that contains requirements is unspecified. (However all examples in this document will use {collectionId}=requirements)
+^2^ The metadata of the collection specifies itemType=record conformsTo=https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements. The id of the collection that contains requirements is unspecified. (However all examples in this document will use {collectionId}=requirements)
 |===
 
 ////
