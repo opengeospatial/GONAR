@@ -7,5 +7,5 @@ identifier:: http://www.opengis.net/spec/ogcapi-requirements-1/1.0/req/need-item
 subject:: Document model
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core
 inherit:: http://www.opengis.net/spec/gonar/1.0/req/need-item/item
-requirement:: /req/need-item/need-item
+requirement:: /req/need-item/mandatory-properties
 ====

@@ -3,70 +3,54 @@
 
 === Overview
 
-This clause specifies the requirements classes that define the components to be used to define a Need Collection.
+This clause specifies the requirements classes that define the components to be used to define a Need.
 
-A Need Collection is a specific case of a Records Collection and, therefore, complies with the relevant requirement classes of the https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records], taking into account the particular characteristics of the elements described in this section.
+A Need is a specific case of a Record and, therefore, complies with the relevant requirement classes of the https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records], taking into account the particular characteristics of the elements described in this section.
 
 In this section, only the elements that differentiate the OGC API – Requirements from the https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records] are described.
 
-[[needs-item]]
-=== Requirements Class "Collections" (Component)
+[[need-item]]
+=== Requirements Class "Need" (Component)
 
 ==== Overview
 
-include::../requirements/requirements_class_needs_item.adoc[]
+include::../requirements/requirements_class_need_item.adoc[]
 
-The Need requirements class defines how the GONAR conceptual model is combined with the Record data model described in section 7.2 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records]. A _Need Item_ is the container of the actual needs.
+The Need requirements class defines how the GONAR data model is combined with the Record data model described in section 7.2 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records]. The Need requirements Class defines the requirements for a _Need Item_. 
+This requirements class follows the instructions described in recommendation /rec/record-core/extensions in section 7.2.3 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records].
 
-The Need requirements Class defines the requirements for a _Need Item_, which is the atomic unit of information of a _Needs Collection_. It follows the instructions described in recommendation /rec/record-core/extensions in section 7.2.3 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records].
+Although this Standard does not mandate any particular encoding for a Need Item, a JSON encoding is proposed. Other encodings are allowed but are not described in this Standard.
 
-Although this Standard does not mandate any particular encoding for a Need Item or a Need Collection, a JSON encoding is proposed. Other encodings are allowed but are not described in this Standard.
-
-[[fb_item_props]]
+[[need_item_props]]
 ==== Properties
-The properties of a record that contains needs uses the GONAR data model for the Needs Item $$$as described in section 7.2 of OGC GONAR Standard: Data Model$$$. The following table maps the properties defined in OGC API - Records section 7.2 with the GONAR Needs item. 
+The properties of a record that contains a `need` use the GONAR data model for the Need Item as described in section $$$7.2$$$ of OGC GONAR Standard: Data Model. The table <<tbl_record_need_item>> maps GONAR need properties with the properties defined in OGC API - Records section 7.2 in table 8 and table 9.
 
 [#tbl_record_need_item,reftext='{table-caption} {counter:table-num}']
-.Need Item
+.Record properties mapped to need data model
 [cols="25,45,35",options="header"]
 |===
-|Property in records |Description |Property in needs item
-|id |A unique record identifier assigned by the server |GONAR.itemIdentifier.code
-|created |The date this record was created in the server |GUF_FeedbackItem.dateInfo.Data when GUF_FeedbackItem.dateInfo.dateType=="creation"
-|updated |The most recent date on which the record was changed |GUF_FeedbackItem.dateInfo.Data when GUF_FeedbackItem.dateInfo.dateType=="revision"
-|language |The language used for textual values (i.e., titles, descriptions, etc.) of this record |GUF_FeedbackItem.locale
-|conformsTo |The extensions/conformance classes used in this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs"
-|externalIds |One or more identifiers, assigned by an external entity, for the resource described by this record |GUF_FeedbackItem.metadataIdentifier.code
+|Property in records|Obligation |Description |Property in need data model
+|id |**required** |A unique record identifier assigned by the server |Id
+|title |**required** |A human-readable name given to the resource described by this record. |Description
+|geometry |optional |A spatial extent associated with the need described by this record. Can be null if there is no associated spatial extent |SubArea transformed to a geometry
+|time |optional |A temporal extent associated with the need described by this record. Can be null if there is no associated temporal extent.	time |TemporalExtent
+|conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs"
+|externalIds |optional | One or more identifiers, assigned by an external products or to ISO 19113 product specifications, related to the need described by this record (if they already exist) | RelatedProductDescription as URL to the related product
+|links |**required** (link to data requirement) |A list of links to data requirements and projects related to this record. |DataRequirement and Project
 |===
 
-NOTE: The properties that https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records] defines in table 9 for describing geospatial resources does not apply to this Standard because the objective of the GUF is not to describe the data but to provide additional information in addition to the metadata that the provider commonly facilitates. The only property that is useful for us it the externalIds, necessary to link tot the target of the feedback item.
+The <<tbl_need_item>> provides an informative list of need properties that could not be mapped to the original record model and constitute and extension of the original record properties.
 
-The <<tbl_feedback_item>> provides an informative list of all properties that may be included in a User Feedback Item.
-
-[#tbl_feedback_item,reftext='{table-caption} {counter:table-num}']
-.User Feedback Item
+[#tbl_need_item,reftext='{table-caption} {counter:table-num}']
+.Need Item extension
 [cols="20,20,40",options="header"]
 |===
-|Property | Requirement | Description
-|itemIdentifier | **required** | Identifier for the feedback item
-|abstract | **required** | Brief narrative description of this item, normally for display to a human
-|purpose | optional| Summary of the intentions with which the feedback was provided
-|contact | **required** | Information about the user providing feedback
-|contactRole| **required** | User's role in the context of this feedback item
-|dateInfo | **required** | Date when the feedback item was created, updated etc
-|itemIsReplyTo | optional | Identifiers of one or more items of feedback to which this item is a response
-|descriptiveKeywords | optional | Keywords that can be useful to search for this item. They are selected from controlled vocabularies
-|tag | optional | Free text word that can be useful to search for this item
-|locale | optional | Language and character set used within the feedback item
-|externalFeedback | optional | Link to an item in an external repository that contains the feedback (not described inline)
-|additionalQuality | optional | Structured quality assessment result
-|userComment | optional | Text free user comment
-|usage | optional | Structured usage report
-|rating | optional | Rating code reflecting the satisfaction of the user with the resource used
-|citation | optional | Citation of a published resource (e.g.: a report, a peer reviewed paper) that provides an evaluation of the usage of the resource
-|additionalLineageSteps | optional | Additional lineage steps not included in the producer metadata
-|significantEvent | optional | Significant natural events or sensor or platform anomalies that can affect the interpretation of the data
-|target | **required** | Identifies a pre-existing resource (e.g., a dataset or a metadata record) from a catalogue
+|Property |Obligation | Description
+|needType |**required** | Main purpose of the needs for in-situ data (see possible values in the GONAR data model)
+|area |optional | Geographic scope or scale of the Need (see possible values in the GONAR data model)
+|subarea |optional| Name of the specific geographical area, region, locality, or any topographical feature name related to the Need. The property `geometry` contains coordinates representing the subarea.
+|processToRealize |optional | Process or set of tasks that are necessary to realize the Need.
+|relatedProductDescription|optional | Description of a product to be created or the outcome to be achieved by using in-situ data as a result of the process. `externalIds` may be used to document identifiers (if they already exist).
 |===
 
 include::../requirements/need-item/mandatory-properties.adoc[]
@@ -77,48 +61,146 @@ include::../requirements/need-item/mandatory-properties.adoc[]
 
 ==== Overview
 
-include::../requirements/requirements_class_need_collection.adoc[]
+include::../requirements/requirements_class_needs_collection.adoc[]
 
-The Need Collection requirements class is a specific implementation of the record collection defined in the https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-record-collection[OGC API - Records Standard] (Section 7.3) that is applicable to collections that contains user feedback (a.k.a. feedback catalog) where a conformsTo property takes the value "http://www.opengis.net/spec/ogcapi-feedback-2/2.0/conf/feedback" to indicate that all elements in the collection follow the <<feedback_item, User Feedback Item>> requirements.
+The _Needs Collection_ requirements class is a specific implementation of the record collection defined in the https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-record-collection[OGC API - Records Standard] (Section 7.3) that is applicable to collections that contains needs where a conformsTo property takes the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs" to indicate that all elements in the collection follow the <<need-item, need>> requirements.
 
-include::../requirements/feedback-collection/mandatory-properties.adoc[]
+include::../requirements/needs-collection/mandatory-properties.adoc[]
 
-A _User Feedback Collection_ is an object that provides information about, and access to, a set of related <<feedback_item, User Feedback Items>>. Such a collection of User Feedbacks Items forms a user feedback catalog. 
+A _Needs Collection_ is an object that provides information about, and access to, a set of related <<need-item, needs>>.
 
-
-
-[[feedback-query-parameters]]
-=== Requirements Class "User Feedback Query Parameters" (Component)
+[[data-requirement-item]]
+=== Requirements Class "Data requirement" (Component)
 
 ==== Overview
 
-The User Feedback Query Parameters requirements class is a specific implementation of the Record Core Query Parameters defined in the https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-record-core-query-parameters[OGC API - Records Standard] (Section 7.4). It inherits all existing query parameters and extends the _externalIds_ query parameter behavior, and deprecates the _type_ parameter, since all elements in a User Feedback Collection are of the same type. 
+include::../requirements/requirements_class_data_requirement_item.adoc[]
 
-[[query-parameters]]
-==== Query parameters
+The Data Requirement class defines how the GONAR data model is combined with the Record data model described in section 7.2 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records]. The Data Requirement requirements Class defines the requirements for a _Data Requirement Item_. 
+This requirements class follows the instructions described in recommendation /rec/record-core/extensions in section 7.2.3 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records].
 
-[[query-parameters-externalIds]]
-===== Parameter externalIds
+Although this Standard does not mandate any particular encoding for a Data Requirement Item, a JSON encoding is proposed. Other encodings are allowed but are not described in this Standard.
 
-include::../requirements/feedback-query-params/query_params_externalIds_def.adoc[]
+[[data_requirement_item_props]]
+==== Properties
+The properties of a record that contains a `data requirement` use the GONAR data model for the Data Requirement Item as described in section $$$7.2$$$ of OGC GONAR Standard: Data Model. The table <<tbl_record_data_-_requirement_item>> maps GONAR data requirement properties with the properties defined in OGC API - Records section 7.2 in table 8 and table 9.
 
-include::../requirements/feedback-query-params/query_params_externalIds.adoc[]
-
-In a _User Feedback Item_, externalIds refers to the identifier of the resource we are providing feedback on (the <<tbl_feedback_item,_target_>>). A single User Feedback Item can point to several externalIds.
-
-_externalIds_ query parameter MAY contain a list of resource ids. This list can use different delimiters depending on the endpoint:
-
-[#tbl_externalIds,reftext='{table-caption} {counter:table-num}']
-.Accepted delimiters for the externalIds User Feedback Query parameter per endpoint
-[cols="30,10,60",options="header"]
+[#tbl_record_data_requirement_item,reftext='{table-caption} {counter:table-num}']
+.Record properties mapped to data requirement data model
+[cols="25,45,35",options="header"]
 |===
-|Endpoint |Delimiters accepted |Response
-|/collections/{collectionsId}/items |"," | Only Feedback items with one or more of the specified external identifiers on the list SHALL appear in the response.
-.3+|/collections/{collectionsId}/stats 
-|"," | Returns n feedback summaries, one for each externalIds indicated on the list.
-a| "\|" | Returns a single summary of those feedback items pointing to each one of the externalIds indicated on the list.
-|"^" | Returns a single summary of those feedback items pointing at the same time to all the externalIds indicated on the list (feedback with multiple target).
+|Property in records|Obligation |Description |Property in need data model
+|id |**required** |A unique record identifier assigned by the server |Id
+|title |**required** |A human-readable name given to the resource described by this record. |Name
+|description |optional |A free-text description of the need described by this record. |Description
+|themes |optional |A knowledge organization system used to classify the variable names described by this data requirement. |Variable and VariableDefinitionURL
+|keywords |optional |A list of free-form names associated with the variable described by this data requirement. |Variable
+|conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements"
+|externalIds |optional | One or more identifiers, assigned by an external dataset, that completely of partially matches the data requirement described by this record (if they already exist) | CompleteMatchingDataset or PartialMatchingDataset as URL to the related dataset
+|links |**required** (link to data requirement) |A list of links to the need related to this record. |Need
 |===
+
+The <<tbl_data_requirement_item>> provides an informative list of data requirement properties that could not be mapped to the original record model and constitute and extension of the original record properties.
+
+[#tbl_data_requirement_item,reftext='{table-caption} {counter:table-num}']
+.Data Requirement Item extension
+[cols="20,20,40",options="header"]
+|===
+|Property |Obligation | Description
+|VariableClass |optional | 
+|ThematicUncertainty |optional | 
+|UoM |optional | 
+|CoordinatedMeasure |optional | 
+|UpdateFrequency |optional | 
+|UpdateFrequencyUoM |optional | 
+|Timeliness |optional | 
+|TimelinessUoM |optional | 
+|HorizontalResolution |optional | 
+|HorizontalResolutionUoM |optional | DistanceUoMCode
+|VerticalResolucion |optional | 
+|VerticalResolutionUoM |optional | DistanceUoMCode
+|EvenDistribution |optional | 
+|DataAccess |optional | DataAccessCode
+|CitSciAcceptance |optional | 
+|reasonForPartialMatchings|optional | 
+|===
+
+include::../requirements/data-requirement-item/mandatory-properties.adoc[]
+
+
+[[data-requirements-collection]]
+=== Requirements Class "Data Requirement Collection" (Component)
+
+==== Overview
+
+include::../requirements/requirements_class_data_requirements_collection.adoc[]
+
+The _Data Requirements Collection_ requirements class is a specific implementation of the record collection defined in the https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-record-collection[OGC API - Records Standard] (Section 7.3) that is applicable to collections that contains data requirements where a conformsTo property takes the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/data-requirements" to indicate that all elements in the collection follow the <<data-requirement-item, data requirement>> requirements.
+
+include::../requirements/data-requirements-collection/mandatory-properties.adoc[]
+
+A _Data Requirements Collection_ is an object that provides information about, and access to, a set of related <<data-requirements-item, data requirements>>.
+
+[[project-item]]
+=== Requirements Class "Project" (Component)
+
+==== Overview
+
+include::../requirements/requirements_class_project_item.adoc[]
+
+The Project requirements class defines how the GONAR data model is combined with the Record data model described in section 7.2 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records]. The Project requirements Class defines the requirements for a _Project Item_. 
+This requirements class follows the instructions described in recommendation /rec/record-core/extensions in section 7.2.3 of https://docs.ogc.org/is/20-004r1/20-004r1.html[OGC API – Records].
+
+Although this Standard does not mandate any particular encoding for a Project Item, a JSON encoding is proposed. Other encodings are allowed but are not described in this Standard.
+
+[[pProroject_item_props]]
+==== Properties
+The properties of a record that contains a `project` use the GONAR data model for the Project Item as described in section $$$7.2$$$ of OGC GONAR Standard: Data Model. The table <<tbl_record_project_item>> maps GONAR project properties with the properties defined in OGC API - Records section 7.2 in table 8 and table 9.
+
+[#tbl_record_project_item,reftext='{table-caption} {counter:table-num}']
+.Record properties mapped to project data model
+[cols="25,45,35",options="header"]
+|===
+|Property in records|Obligation |Description |Property in project data model
+|id |**required** |A unique record identifier assigned by the server |Id
+|title |**required** |A free-text description of the need described by this record. |Description
+|geometry |optional |A spatial extent associated with the need described by this record. Can be null if there is no associated spatial extent |SubArea transformed to a geometry
+|time |optional |A temporal extent associated with the need described by this record. Can be null if there is no associated temporal extent.	time |TemporalExtent
+|conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs"
+|externalIds |optional | One or more identifiers, assigned by an external products or to ISO 19113 product specifications, related to the need described by this record (if they already exist) | RelatedProductDescription as URL to the related product
+|links |**required** (link to data requirement) |A list of links to data requirements and projects related to this record. |DataRequirement and Project
+|===
+
+The <<tbl_project_item>> provides an informative list of project properties that could not be mapped to the original record model and constitute and extension of the original record properties.
+
+[#tbl_project_item,reftext='{table-caption} {counter:table-num}']
+.Project Item extension
+[cols="20,20,40",options="header"]
+|===
+|Property |Obligation | Description
+|needType |**required** | Main purpose of the needs for in-situ data (see possible values in the GONAR data model)
+|area |optional | Geographic scope or scale of the Need (see possible values in the GONAR data model)
+|subarea |optional| Name of the specific geographical area, region, locality, or any topographical feature name related to the Need. The property `geometry` contains coordinates representing the subarea.
+|processToRealize |optional | Process or set of tasks that are necessary to realize the Need.
+|relatedProductDescription|optional | Description of a product to be created or the outcome to be achieved by using in-situ data as a result of the process. `externalIds` may be used to document identifiers (if they already exist).
+|===
+
+include::../requirements/project-item/mandatory-properties.adoc[]
+
+
+[[projects-collection]]
+=== Requirements Class "Projects Collection" (Component)
+
+==== Overview
+
+include::../requirements/requirements_class_projects_collection.adoc[]
+
+The _Projects Collection_ requirements class is a specific implementation of the record collection defined in the https://docs.ogc.org/is/20-004r1/20-004r1.html#clause-record-collection[OGC API - Records Standard] (Section 7.3) that is applicable to collections that contains projects where a conformsTo property takes the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/projects" to indicate that all elements in the collection follow the <<project-item, project>> requirements.
+
+include::../requirements/projects-collection/mandatory-properties.adoc[]
+
+A _Projects Collection_ is an object that provides information about, and access to, a set of related <<project-item, projects>>.
+
 
 
 === Encoding

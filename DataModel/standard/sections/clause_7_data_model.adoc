@@ -44,32 +44,36 @@ image::figures/Need.png[width=600,align="center"]
 4+| ^a^ The idea is for a single user to be able to embody more than one role, but only one role in each item. Thus, a data producer employee may comment and normally speak freely as an end user, but may, for example, issue a metadata override on behalf of the data provider if s/he explicitly chooses that role. S/he would only be allowed to choose roles from his/her user information, and maybe there could be additional restrictions. So users seeking reliable but "semi-official" metadata could look for overrides issued by the provider in that role. +
 ^b^ 	If none of these elements are populated, the item does not provide feedback and should be considered empty.
 |===
+	
 
-[#tbl_project_dt,reftext='{table-caption} {counter:table-num}']
-.GONAR_Project data type
-[width = "100%",options="header"]
-|===	
-|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|{set:cellbgcolor:#D6EAF8}userDetails | Contact details about the user and its organization| CI_Party data type (ISO 19115-1:2014 B.3.2.3)| One (mandatory)
-|{set:cellbgcolor:#D5F5E3}description | User short description or bio | Character string, not empty | Zero or one (optional)
-|{set:cellbgcolor:#D6EAF8}applicationDomain |Application domain(s) a user works in | GUF_ApplicationDomain element |One or more (mandatory)
-|{set:cellbgcolor:#D6EAF8/}userRole |The roles the user can play |GUF_UserRoleCode code list (see <<tbl_user_role_code_cl>>) |Zero or more (optional)
-| externalUserID| User ID in an external system such as an ORCID| MD_Identifier data type (ISO 19115-1:2014 B.3.3.3)| Zero or more (optional)
-|===	
+[#tbl_need_type_code,reftext='{table-caption} {counter:table-num}']
+.Need Type Code
+[cols="20,40",options="header"]
+|===
+|Property |Description
+|Numerical Model |
+|Share Data |
+|Other in-situ CalVal |
+|Remote Sensing CalVal |
+|Scientific Research |
+|Decision Making |
+|Policy Monitoring |
+|Commercial Product or Service |
+|Prepare an EV product or matrix |
+|Other |
+|===
 
-[#tbl_user_role_code_cl,reftext='{table-caption} {counter:table-num}']
-.GUF_UserRoleCode code list
-[width = "100%",options="header"]
-|===	
-|*Name* | *Definition*
-|commercialDataProducer | Commercial Data Producer
-|commercialAddedValue | Commercial Added Value
-|researchDataProducer | Scientific Data Producer
-|researchEndUser | Research End User
-|decisionMaker | Decision Maker
-|generalPublic | General Public
-|===	
-
+[#tbl_area_code,reftext='{table-caption} {counter:table-num}']
+.Need Type Code
+[cols="20,20,40",options="header"]
+|===
+|Property |Description
+|Global |
+|Continental |
+|National |
+|Subnational |
+|Local |
+|===
 
 === Data requirement
 
@@ -106,19 +110,6 @@ image::figures/Data_requirement.png[width=600,align="center"]
 4+| ^a^ The idea is for a single user to be able to embody more than one role, but only one role in each item. Thus, a data producer employee may comment and normally speak freely as an end user, but may, for example, issue a metadata override on behalf of the data provider if s/he explicitly chooses that role. S/he would only be allowed to choose roles from his/her user information, and maybe there could be additional restrictions. So users seeking reliable but "semi-official" metadata could look for overrides issued by the provider in that role. +
 ^b^ 	If none of these elements are populated, the item does not provide feedback and should be considered empty.
 |===
-
-[#tbl_data_requirement_dt,reftext='{table-caption} {counter:table-num}']
-.GONAR Data requirement data type
-[width = "100%",options="header"]
-|===	
-|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|{set:cellbgcolor:#D6EAF8}userDetails | Contact details about the user and its organization| CI_Party data type (ISO 19115-1:2014 B.3.2.3)| One (mandatory)
-|{set:cellbgcolor:#D5F5E3}description | User short description or bio | Character string, not empty | Zero or one (optional)
-|{set:cellbgcolor:#D6EAF8}applicationDomain |Application domain(s) a user works in | GUF_ApplicationDomain element |One or more (mandatory)
-|{set:cellbgcolor:#D6EAF8/}userRole |The roles the user can play |GUF_UserRoleCode code list (see <<tbl_user_role_code_cl>>) |Zero or more (optional)
-| externalUserID| User ID in an external system such as an ORCID| MD_Identifier data type (ISO 19115-1:2014 B.3.3.3)| Zero or more (optional)
-|===	
-
 
 
 === Project
@@ -158,15 +149,5 @@ image::figures/Project.png[width=600,align="center"]
 ^b^ 	If none of these elements are populated, the item does not provide feedback and should be considered empty.
 |===
 
-[#tbl_project_dt,reftext='{table-caption} {counter:table-num}']
-.GONAR_Project data type
-[width = "100%",options="header"]
-|===	
-|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|{set:cellbgcolor:#D6EAF8}userDetails | Contact details about the user and its organization| CI_Party data type (ISO 19115-1:2014 B.3.2.3)| One (mandatory)
-|{set:cellbgcolor:#D5F5E3}description | User short description or bio | Character string, not empty | Zero or one (optional)
-|{set:cellbgcolor:#D6EAF8}applicationDomain |Application domain(s) a user works in | GUF_ApplicationDomain element |One or more (mandatory)
-|{set:cellbgcolor:#D6EAF8/}userRole |The roles the user can play |GUF_UserRoleCode code list (see <<tbl_user_role_code_cl>>) |Zero or more (optional)
-| externalUserID| User ID in an external system such as an ORCID| MD_Identifier data type (ISO 19115-1:2014 B.3.3.3)| Zero or more (optional)
-|===	
+	
 

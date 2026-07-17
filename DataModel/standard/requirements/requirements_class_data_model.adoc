@@ -1,4 +1,4 @@
-[[rc_data model_item]]
+[[rc_data_model_item]]
 [requirements_class]
 .Requirements Class 'Data Model'
 ====

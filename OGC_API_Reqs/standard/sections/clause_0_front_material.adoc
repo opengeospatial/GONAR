@@ -41,17 +41,21 @@ The following tables lists the endpoints of the OGC API - Requirements that allo
 |Resource |Path |HTTP method |Document reference
 |Landing page |`/` |GET | https://docs.ogc.org/is/17-069r3/17-069r3.html#_api_landing_page[API landing page]
 |Conformance declaration |`/conformance` |GET | https://docs.ogc.org/is/20-004r1/20-004r1.html#conformance_class[Declaration of conformance]
-|Need collections |`/collections` |GET | Need collections
-|Need collection |`/collections/{collectionId}` |GET | Need collection
+|Collections |`/collections` |GET | Needs, Data requirements and projects collections (among others)
+|Needs collection |`/collections/{collectionId}` |GET | Needs collection
 |Need items^1^ |`/collections/{collectionId}/items` |GET |Needs
 |Need item |`/collections/{collectionId}/items/{itemId}` |GET |Need
-|Data requirement collections |`/collections` |GET |Data requirement collections
-|Data requirement collection |`/collections/{collectionId}` |GET |Data requirement collection
+|Data requirements collection |`/collections/{collectionId}` |GET |Data requirements collection
 |Data requirement items^2^ |`/collections/{collectionId}/items` |GET |Data requirements
 |Data requirement item |`/collections/{collectionId}/items/{itemId}` |GET |Data requirement
+|Projects collection |`/collections/{collectionId}` |GET | Projects collection
+|Project items^3^ |`/collections/{collectionId}/items` |GET |Projects
+|Project item |`/collections/{collectionId}/items/{itemId}` |GET |Project
 4+| ^1^ The metadata of the collection specifies itemType=record conformsTo=https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs
 The id of the collection that contains needs is unspecified. (However all examples in this document will use {collectionId}=needs) +
 ^2^ The metadata of the collection specifies itemType=record conformsTo=https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements. The id of the collection that contains requirements is unspecified. (However all examples in this document will use {collectionId}=requirements)
+^3^ The metadata of the collection specifies itemType=record conformsTo=https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/projects. The id of the collection that contains requirements is unspecified. (However all examples in this document will use {collectionId}=projects)
+
 |===
 
 ////
