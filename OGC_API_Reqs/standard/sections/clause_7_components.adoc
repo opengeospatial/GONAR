@@ -36,7 +36,7 @@ The properties of a record that contains a `need` use the GONAR data model for t
 |time |optional |A temporal extent associated with the need described by this record. Can be null if there is no associated temporal extent.	time |TemporalExtent
 |conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs"
 |externalIds |optional | One or more identifiers, assigned by an external products or to ISO 19113 product specifications, related to the need described by this record (if they already exist) | RelatedProductDescription as URL to the related product
-|links |**required** (link to data requirement) |A list of links to data requirements and projects related to this record. |DataRequirement and Project
+|links |**required** (link to data requirement) |A list of links to data requirements and projects related to this record. |DataRequirement (rel=related) and Project (rel=related)
 |===
 
 The <<tbl_need_item>> provides an informative list of need properties that could not be mapped to the original record model and constitute and extension of the original record properties.
@@ -97,7 +97,7 @@ The properties of a record that contains a `data requirement` use the GONAR data
 |keywords |optional |A list of free-form names associated with the variable described by this data requirement. |Variable
 |conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements"
 |externalIds |optional | One or more identifiers, assigned by an external dataset, that completely of partially matches the data requirement described by this record (if they already exist) | CompleteMatchingDataset or PartialMatchingDataset as URL to the related dataset
-|links |**required** (link to data requirement) |A list of links to the need related to this record. |Need
+|links |**required** (link to data requirement) |A list of links to the need related to this record. |Need (rel=related)
 |===
 
 The <<tbl_data_requirement_item>> provides an informative list of data requirement properties that could not be mapped to the original record model and constitute and extension of the original record properties.
@@ -107,22 +107,22 @@ The <<tbl_data_requirement_item>> provides an informative list of data requireme
 [cols="20,20,40",options="header"]
 |===
 |Property |Obligation | Description
-|VariableClass |optional | 
-|ThematicUncertainty |optional | 
-|UoM |optional | 
-|CoordinatedMeasure |optional | 
-|UpdateFrequency |optional | 
-|UpdateFrequencyUoM |optional | 
-|Timeliness |optional | 
-|TimelinessUoM |optional | 
-|HorizontalResolution |optional | 
-|HorizontalResolutionUoM |optional | DistanceUoMCode
-|VerticalResolucion |optional | 
-|VerticalResolutionUoM |optional | DistanceUoMCode
-|EvenDistribution |optional | 
-|DataAccess |optional | DataAccessCode
-|CitSciAcceptance |optional | 
-|reasonForPartialMatchings|optional | 
+|VariableClass |optional |Set of Essential Variables (EV) related to the theme of the in-situ data required (see possible values in the GONAR data model)
+|ThematicUncertainty |optional |Level of thematic uncertainty or error required to address the data requirement. Please express this as a single value or as an interval between a threshold and goal values.
+|UoM |optional | Level of thematic uncertainty or error Units of Measure
+|CoordinatedMeasure |optional |Other in-situ variables that should be captured in the same location in a coordinated manner with the one required
+|UpdateFrequency |optional |How often the data should to be measured. Please express this as a single value or as an interval between a threshold and goal values.
+|UpdateFrequencyUoM |optional |Update frequency Units of Measure (see possible values in the GONAR data model)
+|Timeliness |optional |Time delay between the measurement acquisition and the accessibility is required to address the data requirements. Please express this as a single value or as an interval between a threshold and goal values.
+|TimelinessUoM |optional |Timeliness Units of Measure (see possible values in the GONAR data model)
+|HorizontalResolution |optional |Minimum distance in the horizontal dimension that should separate two close measurements? Please express this as a single value or as an interval between a threshold and goal values.
+|HorizontalResolutionUoM |optional |Horizontal resolution Units of Measure
+|VerticalResolution |optional |Which is the minimum distance in the vertical dimension that should separate two close measurement? Please express this as a single value or as an interval between a threshold and goal values.
+|VerticalResolutionUoM |optional |Vertical resolution Units of Measure
+|EvenDistribution |optional |Is necessary or possible an uniform the distribution of the in-situ samples?
+|DataAccess |optional | Preferred data access mechanism (see possible values in the GONAR data model)
+|CitSciAcceptance |optional | Is Citizen Science data acceptable.
+|ReasonForPartialMatchings |optional | For partial matches dataset, which aspects are a limitation or prevents for using it.
 |===
 
 include::../requirements/data-requirement-item/mandatory-properties.adoc[]
@@ -153,7 +153,7 @@ This requirements class follows the instructions described in recommendation /re
 
 Although this Standard does not mandate any particular encoding for a Project Item, a JSON encoding is proposed. Other encodings are allowed but are not described in this Standard.
 
-[[pProroject_item_props]]
+[[Project_item_props]]
 ==== Properties
 The properties of a record that contains a `project` use the GONAR data model for the Project Item as described in section $$$7.2$$$ of OGC GONAR Standard: Data Model. The table <<tbl_record_project_item>> maps GONAR project properties with the properties defined in OGC API - Records section 7.2 in table 8 and table 9.
 
@@ -163,26 +163,11 @@ The properties of a record that contains a `project` use the GONAR data model fo
 |===
 |Property in records|Obligation |Description |Property in project data model
 |id |**required** |A unique record identifier assigned by the server |Id
-|title |**required** |A free-text description of the need described by this record. |Description
-|geometry |optional |A spatial extent associated with the need described by this record. Can be null if there is no associated spatial extent |SubArea transformed to a geometry
-|time |optional |A temporal extent associated with the need described by this record. Can be null if there is no associated temporal extent.	time |TemporalExtent
-|conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs"
-|externalIds |optional | One or more identifiers, assigned by an external products or to ISO 19113 product specifications, related to the need described by this record (if they already exist) | RelatedProductDescription as URL to the related product
-|links |**required** (link to data requirement) |A list of links to data requirements and projects related to this record. |DataRequirement and Project
-|===
-
-The <<tbl_project_item>> provides an informative list of project properties that could not be mapped to the original record model and constitute and extension of the original record properties.
-
-[#tbl_project_item,reftext='{table-caption} {counter:table-num}']
-.Project Item extension
-[cols="20,20,40",options="header"]
-|===
-|Property |Obligation | Description
-|needType |**required** | Main purpose of the needs for in-situ data (see possible values in the GONAR data model)
-|area |optional | Geographic scope or scale of the Need (see possible values in the GONAR data model)
-|subarea |optional| Name of the specific geographical area, region, locality, or any topographical feature name related to the Need. The property `geometry` contains coordinates representing the subarea.
-|processToRealize |optional | Process or set of tasks that are necessary to realize the Need.
-|relatedProductDescription|optional | Description of a product to be created or the outcome to be achieved by using in-situ data as a result of the process. `externalIds` may be used to document identifiers (if they already exist).
+|title |**required** |A human-readable name given to the project described by this record. |Name
+|description |optional |A free-text description of the project described by this record. |Description
+|conformsTo |optional |The extensions/conformance classes used by this record |"https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/projects"
+|externalIds |optional | One or more identifiers, assigned by an external descriptions, related to the project described by this record | 
+|links |**required** (link to data requirement) |A list of links to projects related to this record. |Need (rel=related) and Logo (rel=preview) and URL (rel=describes)
 |===
 
 include::../requirements/project-item/mandatory-properties.adoc[]
@@ -206,17 +191,7 @@ A _Projects Collection_ is an object that provides information about, and access
 === Encoding
 
 [[json-component]]
-==== Requirements Class "JSON" (Component)
-
-===== Overview
-
-include::../requirements/requirements_class_json.adoc[]
-
-include::../requirements/json/fb-conformance.adoc[]
-
-[[fb-item-encoding]]
-===== Needs Item encoding
-
+==== Requirements Class "GeoJSON" (Component)
 https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON] is a commonly used format based on JSON that is simple to understand and well supported by tools and software libraries. Since most Web developers are comfortable with using a JSON-based format, supporting GeoJSON is recommended. 
 
 The following requirements apply when:
@@ -224,44 +199,39 @@ The following requirements apply when:
 . The API endpoint advertises conformance to the JSON Conformance Class.
 . The client negotiates that the content of the server's response be https://datatracker.ietf.org/doc/html/rfc7946[GeoJSON].
 
-include::../requirements/json/fb-item-response.adoc[]
+===== Overview
 
-include::../requirements/json/fb-item-content.adoc[]
+include::../requirements/requirements_class_json.adoc[]
 
-[NOTE]
-======================================================================
-OGC API - Feedback uses elements of ISO 19115 to define certain properties. Since ISO 19115 does not yet have an official JSON implementation, all references to this ISO in the feedback item JSON schema are made as '19115-4-core.json'.
-======================================================================
+include::../requirements/json/need-conformance.adoc[]
+
+[[need-item-encoding]]
+===== Need Item encoding
+
+include::../requirements/json/need-item-response.adoc[]
+
+include::../requirements/json/need-item-content.adoc[]
+
+[[data-requirement-item-encoding]]
+===== Data requirement Item encoding
+
+include::../requirements/json/data-requirement-item-response.adoc[]
+
+include::../requirements/json/data-requirement-item-content.adoc[]
+
+[[need-item-encoding]]
+===== Project encoding
+
+include::../requirements/json/project-item-response.adoc[]
+
+include::../requirements/json/project-item-content.adoc[]
+
+===== Other TBD
 
 [[schema_json_feedback]]
 .link:https://github.com/opengeospatial/Geospatial-User-Feedback/tree/main/OGC_API/standard/openapi/schemas/ogcapi_feedback-item.yaml[Schema for a feedback item encoded as GeoJSON (ogcapi_feedback-item.yaml)]
 [source,JSON]
 ----
-include::../openapi/schemas/ogcapi_feedback-item.yaml[]
+include::../openapi/schemas/ogcapi_requirements-item.yaml[]
 ----
-
-[[fb-collection-encoding]]
-===== Needs Collection encoding
-
-https://datatracker.ietf.org/doc/html/rfc8259[JSON] is an open standard file format and data interchange format that uses human-readable text to store and transmit data objects consisting of attribute–value pairs and arrays (or other serializable values).  JSON is a commonly used data encoding with diverse uses in electronic data interchange, including that of web applications with servers.
-
-The following requirements apply when:
-
-. The API endpoint advertises conformance to the JSON Conformance Class
-. The client negotiates that the content of the server's response be JSON.
-
-include::../requirements/json/fb-catalog-response.adoc[]
-
-include::../requirements/json/fb-catalog-content.adoc[]
-
-[NOTE]
-======================================================================
-The schema for the feedback collection is a specific implementation of the record collection defined in https://docs.ogc.org/DRAFTS/20-004.html#\_clause-core-record\_[OGC API - RecordsStandard].
-
-While https://docs.ogc.org/DRAFTS/20-004.html#\_clause-core-record\_[OGC API - RecordsStandard] defines the property conformsTo as optional, OGC API - Feedback
-considers it as required and its value is fixed as "http://www.opengis.net/spec/ogcapi-feedback-2/2.0/conf/feedback" to indicate that all elements in the collection follows the <<feedback_item, feedback item>> requirements.
-======================================================================
-
-.Schema for a collection record encoded as GeoJSON
-link:https://github.com/opengeospatial/ogcapi-records/blob/master/core/openapi/schemas/recordGeoJSON.yaml[]
 

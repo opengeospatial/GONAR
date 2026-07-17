@@ -1,0 +1,8 @@
+[[req_json_need-item-content]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/need-item-content
+part:: The schema of all responses containing a need SHALL validate against the OpenAPI 3.0 schema document `ogcapi_requirement-need.yaml`.
+====

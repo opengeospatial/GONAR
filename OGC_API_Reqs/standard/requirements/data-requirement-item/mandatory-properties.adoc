@@ -1,11 +1,11 @@
-[[req_need_mandatory-properties]]
+[[req_data_requirement_mandatory-properties]]
 
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/need-item/mandatory-properties
-part:: Each record that describes needs (a need item) in a response SHALL follow the GONAR conceptual model for needs. The equivalences between some of the GONAR properties and the properties of the catalog record and the properties related to the resource are defined in <<tbl_record_need_item>>. The needs have some elements that use formal vocabularies their possible values are also include in the GONAR conceptual model.
-part:: Each record that describes a need SHALL have the mandatory properties specified in <<tbl_record_need_item>> and <<tbl_need_item>>.
-part:: Each record that describes a need SHALL have property "conformsTo" with the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs" except if all record in the collection conforms to the the same value (see requirements for the collection).
+identifier:: /req/data-requirement-item/mandatory-properties
+part:: Each record that describes data requirements (a data requirement item) in a response SHALL follow the GONAR conceptual model for data requirements. The equivalences between some of the GONAR properties and the properties of the catalog record and the properties related to the resource are defined in <<tbl_record_data_requirement_item>>. The data requirements have some elements that use formal vocabularies their possible values are also include in the GONAR conceptual model.
+part:: Each record that describes a data requirement SHALL have the mandatory properties specified in <<tbl_record_data_requirement_item>> and <<tbl_data_requirement_item>>.
+part:: Each record that describes a data requirement SHALL have property "conformsTo" with the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements" except if all record in the collection conforms to the the same value (see requirements for the collection).
 ====

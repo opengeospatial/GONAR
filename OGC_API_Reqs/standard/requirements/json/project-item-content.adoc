@@ -1,0 +1,8 @@
+[[req_json_project-item-content]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/project-item-content
+part:: The schema of all responses containing a project SHALL validate against the OpenAPI 3.0 schema document `ogcapi_requirements-project-item.yaml`.
+====

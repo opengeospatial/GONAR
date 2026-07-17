@@ -1,0 +1,8 @@
+[[req_json_api-conformance]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/api-conformance
+part:: The `conformsTo` array SHALL contain the value `http://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/json`.
+====

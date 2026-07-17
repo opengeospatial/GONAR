@@ -1,0 +1,8 @@
+[[req_json_fb-item-response]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/fb-item-response
+part:: The `geometry` member SHALL be present and SHALL contain the conversion of the need `area` to geographical coordinates if possible or null.
+====

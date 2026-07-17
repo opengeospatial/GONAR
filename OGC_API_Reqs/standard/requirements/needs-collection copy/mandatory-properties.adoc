@@ -1,0 +1,8 @@
+[[req_projects-collection_mandatory-properties-collection]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/projects-collection/mandatory-properties
+part:: When all records of a projects collection (projects catalog) are projects (to prevent unnecessary duplication) the conformsTo property of the catalog SHALL have an element "conformsTo" with the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/projects".
+====

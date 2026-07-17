@@ -1,0 +1,8 @@
+[[req_json_project-item-response]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/project-item-response
+part:: The `geometry` member SHALL be present and SHALL be null.
+====

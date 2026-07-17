@@ -1,0 +1,8 @@
+[[req_json_data-requirement-item-content]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/json/data-requirement-item-content
+part:: The schema of all responses containing a data requirement SHALL validate against the OpenAPI 3.0 schema document `ogcapi_requirements-data-requirement-item.yaml`.
+====

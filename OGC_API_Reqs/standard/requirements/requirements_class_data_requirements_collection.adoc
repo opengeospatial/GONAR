@@ -1,11 +1,11 @@
-[[rc_needs_collection]]
+[[rc_data-requirements_collection]]
 
 [requirements_class]
 ====
 [%metadata]
-identifier:: https://www.opengis.net/spec/ogcapi-requirements-1/1.0/req/needs-collection
+identifier:: https://www.opengis.net/spec/ogcapi-requirements-1/1.0/req/data-requirements-collection
 subject:: Document model
-inherit:: https://www.opengis.net/spec/gonar/1.0/req/data_model
 inherit:: http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-collection
-requirement:: /req/needs-collection/mandatory-properties-collection
+inherit:: https://www.opengis.net/spec/gonar/1.0/req/data_model
+requirement:: /req/data-requirements-collection/mandatory-properties-collection
 ====

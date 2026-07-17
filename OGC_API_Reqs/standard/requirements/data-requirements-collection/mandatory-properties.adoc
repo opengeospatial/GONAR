@@ -1,8 +1,8 @@
-[[req_needs-collection_mandatory-properties-collection]]
+[[req_data-requirements-collection_mandatory-properties-collection]]
 
 [requirement]
 ====
 [%metadata]
-identifier:: /req/needs-collection/mandatory-properties
-part:: When all records of a needs collection (needs catalog) are needs (to prevent unnecessary duplication) the conformsTo property of the catalog SHALL have an element "conformsTo" with the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/needs".
+identifier:: /req/data-requirements-collection/mandatory-properties
+part:: When all records of a data-requirements collection (data-requirements catalog) are data-requirements (to prevent unnecessary duplication) the conformsTo property of the catalog SHALL have an element "conformsTo" with the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/requirements".
 ====

@@ -84,7 +84,7 @@ include::../requirements/data-model/data-requirement.adoc[]
 image::figures/Data_requirement.png[width=600,align="center"]
 
 [#tbl_data_requirement,reftext='{table-caption} {counter:table-num}']
-.GONAR Data Requirement data type
+.TBD GONAR Data Requirement data type
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
@@ -111,6 +111,47 @@ image::figures/Data_requirement.png[width=600,align="center"]
 ^b^ 	If none of these elements are populated, the item does not provide feedback and should be considered empty.
 |===
 
+[#tbl_requirement_variable_class_code,reftext='{table-caption} {counter:table-num}']
+.Data Requirement Type Code
+[cols="20,40",options="header"]
+|===
+|Property |Description
+|Agriculture (EAV) |
+|Atmosphere (ECV) |
+|Biodiversity (EBV) |
+|Geodiversity (EGV) |
+|Socioeconomic (SocioEcoV) |
+|Ocean (ECV & EOV) |
+|Terrestrial (ECV) |
+|Water (EWV) |
+|===
+
+[#tbl_requirement_variable_class_code,reftext='{table-caption} {counter:table-num}']
+.Data Requirement Type Code
+[cols="20,40",options="header"]
+|===
+|Cloud Service |
+|Subscription Server |
+|Download Service (OGC) |
+|View and Download Service (OGC) |
+|Download link |
+|Offline Physical Support |
+|API |
+|===
+
+[#tbl_requirement_temporal_units_code,reftext='{table-caption} {counter:table-num}']
+.Data Requirement Temporal Units Code
+[cols="20,20,40",options="header"]
+|===
+|Property |Description
+|year |
+|month |
+|week |
+|day |
+|hour |
+|minute |
+|second |
+|===
 
 === Project
 

@@ -1,0 +1,11 @@
+[[req_project_mandatory-properties]]
+
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/project-item/mandatory-properties
+part:: Each record that describes projects (a project item) in a response SHALL follow the GONAR conceptual model for projects. The equivalences between some of the GONAR properties and the properties of the catalog record and the properties related to the resource are defined in <<tbl_record_project_item>>. The projects have some elements that use formal vocabularies their possible values are also include in the GONAR conceptual model.
+part:: Each record that describes a project SHALL have the mandatory properties specified in <<tbl_record_project_item>>.
+part:: Each record that describes a project SHALL have property "conformsTo" with the value "https://www.opengis.net/spec/ogcapi-requirements-1/1.0/conf/projects" except if all record in the collection conforms to the the same value (see requirements for the collection).
+====
