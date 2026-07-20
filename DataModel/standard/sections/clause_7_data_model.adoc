@@ -7,7 +7,7 @@ The Data Model requirements class defines the data model classes that define a n
 
 include::../requirements/requirements_class_data_model.adoc[]
 
-image::sections/figures/GONAR_full.png[width=600,align="center"]
+image::../figures/GONAR_full.png[width=600,align="center"]
 
 
 === Need
@@ -17,7 +17,9 @@ include::../requirements/data-model/need.adoc[]
 [#img_feedback,reftext='{figure-caption} {counter:figure-num}']
 .GONAR_Need in UML
 //image::../figures/FeedbackItem_1.png[width=600,align="center"]
-image::figures/Need.png[width=600,align="center"]
+
+image::../figures/GONAR_Need.png[width=600,align="center"]
+
 
 [#tbl_need,reftext='{table-caption} {counter:table-num}']
 .GONAR_Need data type
@@ -83,7 +85,7 @@ include::../requirements/data-model/data-requirement.adoc[]
 
 [#img_data_requirement,reftext='{figure-caption} {counter:figure-num}']
 .GONAR Data Requirement in UML
-image::figures/Data_requirement.png[width=600,align="center"]
+image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 
 [#tbl_data_requirement,reftext='{table-caption} {counter:table-num}']
 .TBD GONAR Data Requirement data type
