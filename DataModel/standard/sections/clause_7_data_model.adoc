@@ -23,8 +23,9 @@ include::../requirements/data-model/need.adoc[]
 image::../figures/GONAR_Need.png[width=600,align="center"]
 
 
+
 [#tbl_need,reftext='{table-caption} {counter:table-num}']
-.GONAR Need data type
+.GONAR_Need data type
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
@@ -77,7 +78,7 @@ include::../requirements/data-model/data-requirement.adoc[]
 image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 
 [#tbl_data_requirement,reftext='{table-caption} {counter:table-num}']
-.GONAR Data Requirement data type
+.GONAR_DataRequirement data type
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
