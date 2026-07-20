@@ -8,7 +8,7 @@ The Data Model requirements class defines the data model classes that define a n
 include::../requirements/requirements_class_data_model.adoc[]
 
 [#img_gonar_full,reftext='{figure-caption} {counter:figure-num}']
-.Full GONAR in UML
+.GONAR in UML
 
 image::../figures/GONAR_full.png[width=600,align="center"]
 
@@ -17,7 +17,7 @@ image::../figures/GONAR_full.png[width=600,align="center"]
 
 include::../requirements/data-model/need.adoc[]
 
-[#img_feedback,reftext='{figure-caption} {counter:figure-num}']
+[#img_need,reftext='{figure-caption} {counter:figure-num}']
 .GONAR Need in UML
 //image::../figures/FeedbackItem_1.png[width=600,align="center"]
 image::../figures/GONAR_Need.png[width=600,align="center"]
@@ -40,7 +40,7 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 |===
 
 [#tbl_need_type_code,reftext='{table-caption} {counter:table-num}']
-.Need Type Code
+.GONAR_NeedTypeCode code list
 [cols="20,40",options="header"]
 |===
 |Property |Description
@@ -58,7 +58,7 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 
 
 [#tbl_area_code,reftext='{table-caption} {counter:table-num}']
-.Area Code
+.GONAR_AreaCode code list
 [cols="20,40",options="header"]
 |===
 |Property |Description
@@ -102,23 +102,23 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |citSciAcceptance | Whether citizen science data is accepted (yes or not) and why. | Character String type, not empty |  Zero or one (optional)
 |===
 
-[#tbl_requirement_variable_class_code,reftext='{table-caption} {counter:table-num}']
-.Data Requirement Variable Class Code
+[#tbl_variable_class_code,reftext='{table-caption} {counter:table-num}']
+.GONAR_VariableClassCode code list
 [cols="20,40",options="header"]
 |===
 |Property |Description
-|Agriculture (EAV) | Essential Agriculture Variables
-|Atmosphere (ECV) | Essential Climate Variables - Atmosphere
-|Biodiversity (EBV) | Essential Biodiversity Variables
-|Geodiversity (EGV) | Essential Geodiversity Variables
-|Socioeconomic (SocioEcoV) | Socioeconomic Variables
-|Ocean (ECV & EOV) | Essential Climate Variables - Ocean
-|Terrestrial (ECV) | Essential Climate Variables - Terrestrial
-|Water (EWV) | Essential Water Variables
+|Agriculture (EAV) | Essential Agriculture Variables.
+|Atmosphere (ECV) | Essential Climate Variables - Atmosphere.
+|Biodiversity (EBV) | Essential Biodiversity Variables.
+|Geodiversity (EGV) | Essential Geodiversity Variables.
+|Socioeconomic (SocioEcoV) | Socioeconomic Variables.
+|Ocean (ECV & EOV) | Essential Climate Variables - Ocean.
+|Terrestrial (ECV) | Essential Climate Variables - Terrestrial.
+|Water (EWV) | Essential Water Variables.
 |===
 
-[#tbl_requirement_data access_code,reftext='{table-caption} {counter:table-num}']
-.Data Requirement Data Access Code
+[#tbl_data_access_code,reftext='{table-caption} {counter:table-num}']
+.GONAR_DataAccessCode code list
 [cols="20,40",options="header"]
 |===
 |Cloud Service | Data access service on the Internet.
@@ -130,8 +130,8 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |API | Application Programming Interface.
 |===
 
-[#tbl_requirement_temporal_units_code,reftext='{table-caption} {counter:table-num}']
-.Data Requirement Temporal Units Code
+[#tbl_temporal_uom_code,reftext='{table-caption} {counter:table-num}']
+.GONAR_TemporalUoMCode code list
 [cols="20,40",options="header"]
 |===
 |Property |Description
@@ -140,8 +140,17 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |week | Calendar week.
 |day | Calendar day.
 |hour | Time interval of 60 minutes.
-|minute | Time interval of 60 second.
+|minute | Time interval of 60 seconds.
 |second | Base unit of time.
+|===
+
+[#tbl_distance_uom_code,reftext='{table-caption} {counter:table-num}']
+.GONAR_DistanceUoMCode code list
+[cols="20,40",options="header"]
+|===
+|Property |Description
+|km | Kilometer.
+|m | Meter.
 |===
 
 === Project
@@ -158,27 +167,10 @@ image::../figures/GONAR_Project.png[width=300,align="center"]
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|itemIdentifier | Identifier for the feedback item. | MD_Identifier data type (ISO 19115-1:2014 B.3.3.3) |  One (mandatory)
-|abstract | Brief narrative description of this item, normally for display to a human. | Character String type, not empty |  One (mandatory)
-|purpose | Summary of the intentions with which the feedback was provided | Character String type, not empty |  Zero or one (optional)
-|contact | Information about the user providing feedback | GUF_UserInformation data type (<<tbl_user_information_dt>>) |  One (mandatory)
-|contactRole | User's role in the context of this feedback item. A user may have several roles recorded in the GUF_UserInformation, but this is the one that applies for this feedback ^a^. | GUF_UserRoleCode (see <<tbl_user_role_code_cl>>) |  One (mandatory)
-|dateInfo | Date when the feedback item was created, updated etc. | CI_Date (ISO 19115-1:2014 B.3.2.6) |  One or more (mandatory)
-|itemIsReplyTo | Identifiers of one or more items of feedback to which this item is a response.  | MD_Identifier data type (ISO 19115-1:2014 B.3.3.3) |  Zero or more (optional). Populate only if the feedback item is responding to another feedback item (e.g. an answer to a previous comment). 
-|descriptiveKeywords | Keywords that can be useful to search for this item. They are selected from controlled vocabularies | MD_Keywords data type (ISO 19115-1:2014 B.2.3.2) |  Zero or more (optional)
-|tag | Free text word that can be useful to search for this item. | Character String type, not empty |  Zero or more (optional))
-|locale | Language and character set used within the feedback item | PT_Locale data type (ISO 19115-1:2014 B.3.4.3) |  Zero or more (optional)
-|externalFeedback | Link to an item in an external repository that contains the feedback (not described inline). | CI_Citation data type (ISO 19115-1:2014 B.3.2.1) |  Zero or one (optional) ^b^
-|additionalQuality | Structured quality assessment result | DQ_DataQuality data type (ISO 19157:2013 C.2.1.1) |  Zero or more (optional) ^b^
-|userComment | Text free user comment | GUF_UserComment data type (see <<tbl_user_comment_dt>>) | Zero or one (optional) ^b^
-|usage | Structured usage report | GUF_UsageReport (see <<tbl_usage_report_dt>>) |  Zero or more (optional) ^b^
-|rating | Rating code reflecting the satisfaction of the user with the resource used | GUF_Rating (see <<tbl_rating_dt>>) |  Zero or one (optional) ^b^
-|citation | Citation of a published resource (e.g., a report, a peer reviewed paper) that provides an evaluation of the usage of the resource | CI_Citation data type (ISO 19115-1:2014 B.3.2.1) or, preferably, QCM_Publication data type (see <<tbl_publication_elements>>)|  Zero or more (optional) ^b^
-|{set:cellbgcolor:#D6EAF8}additionalLineageSteps | Additional lineage steps not included in the producer metadata | LI_Lineage data type (ISO 19115-1:2014 B.2.5) |  Zero or one (optional) ^b^
-|{set:cellbgcolor:#D6EAF8/}significantEvent | Significant natural events or sensor or platform anomalies that can affect the interpretation of the data. | GUF_SignificantEvent (see <<tbl_significant_event_dt>>) |  Zero or more (optional) ^b^
-|target | Identifies a pre-existing resource (e.g., a dataset or a metadata record) from a catalogue. | GUF_FeedbackTarget (see <<tbl_feedback_target_dt>>)|  One or more (mandatory)
-4+| ^a^ The idea is for a single user to be able to embody more than one role, but only one role in each item. Thus, a data producer employee may comment and normally speak freely as an end user, but may, for example, issue a metadata override on behalf of the data provider if s/he explicitly chooses that role. S/he would only be allowed to choose roles from his/her user information, and maybe there could be additional restrictions. So users seeking reliable but "semi-official" metadata could look for overrides issued by the provider in that role. +
-^b^ 	If none of these elements are populated, the item does not provide feedback and should be considered empty.
+|itemIdentifier | Identifier for the project item. | MD_Identifier data type (ISO 19115-1:2014 B.3.3.3) |  One (mandatory)
+|description | Brief narrative description of the project, normally for display to a human. | Character String type, not empty |  Zero or one (optional)
+|logo | URL of the project logo. | Character String type, not empty |  Zero or one (optional)
+|URL | Project URL. | Character String type, not empty |  Zero or one (optional)
 |===
 
 	
