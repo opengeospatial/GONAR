@@ -7,13 +7,15 @@ The Data Model requirements class defines the data model classes that define a n
 
 include::../requirements/requirements_class_data_model.adoc[]
 
+image::figures/GONAR_full.png[width=600,align="center"]
+
 
 === Need
 
 include::../requirements/data-model/need.adoc[]
 
 [#img_feedback,reftext='{figure-caption} {counter:figure-num}']
-.GONAR_Need and GUF_Project  in UML
+.GONAR_Need in UML
 //image::../figures/FeedbackItem_1.png[width=600,align="center"]
 image::figures/Need.png[width=600,align="center"]
 
