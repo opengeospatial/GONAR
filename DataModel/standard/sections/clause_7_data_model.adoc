@@ -7,7 +7,7 @@ The Data Model requirements class defines the data model classes that define a n
 
 include::../requirements/requirements_class_data_model.adoc[]
 
-image::figures/GONAR_full.png[width=600,align="center"]
+image::sections/figures/GONAR_full.png[width=600,align="center"]
 
 
 === Need
