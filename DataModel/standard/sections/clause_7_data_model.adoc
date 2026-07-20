@@ -76,6 +76,8 @@ include::../requirements/data-model/data-requirement.adoc[]
 [#img_data_requirement,reftext='{figure-caption} {counter:figure-num}']
 .GONAR Data Requirement in UML
 image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
+  
+   
 
 [#tbl_data_requirement,reftext='{table-caption} {counter:table-num}']
 .GONAR_DataRequirement data type
@@ -117,19 +119,6 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |Water (EWV) | Essential Water Variables.
 |===
 
-[#tbl_data_access_code,reftext='{table-caption} {counter:table-num}']
-.GONAR_DataAccessCode code list
-[cols="20,40",options="header"]
-|===
-|Cloud Service | Data access service on the Internet.
-|Subscription Server | Data access is allowed only to registered users.
-|Download Service (OGC) | OGC compliant service that supports data download.
-|View and Download Service (OGC) | OGC compliant service that supports both data visualization and data download.
-|Download link | Direct web address (URL) to a downloadable file or dataset.
-|Offline Physical Support | Data provided on a tangible format (e.g., DVD, USB, analogic data).
-|API | Application Programming Interface.
-|===
-
 [#tbl_temporal_uom_code,reftext='{table-caption} {counter:table-num}']
 .GONAR_TemporalUoMCode code list
 [cols="20,40",options="header"]
@@ -151,6 +140,19 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |Property |Description
 |km | Kilometer.
 |m | Meter.
+|===
+
+[#tbl_data_access_code,reftext='{table-caption} {counter:table-num}']
+.GONAR_DataAccessCode code list
+[cols="20,40",options="header"]
+|===
+|Cloud Service | Data access service on the Internet.
+|Subscription Server | Data access is allowed only to registered users.
+|Download Service (OGC) | OGC compliant service that supports data download.
+|View and Download Service (OGC) | OGC compliant service that supports both data visualization and data download.
+|Download link | Direct web address (URL) to a downloadable file or dataset.
+|Offline Physical Support | Data provided on a tangible format (e.g., DVD, USB, analogic data).
+|API | Application Programming Interface.
 |===
 
 === Project
