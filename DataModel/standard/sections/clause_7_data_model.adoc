@@ -139,13 +139,13 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 [cols="20,40",options="header"]
 |===
 |Property |Description
-|Cloud Service | Data access service on the Internet.
-|Subscription Server | Data access is allowed only to registered users.
-|Download Service (OGC) | OGC compliant service that supports data download.
-|View and Download Service (OGC) | OGC compliant service that supports both data visualization and data download.
-|Download link | Direct web address (URL) to a downloadable file or dataset.
-|Offline Physical Support | Data provided on a tangible format (e.g., DVD, USB, analogic data).
-|API | Application Programming Interface.
+|Cloud Service | Data access service on the Internet
+|Subscription Server | Data access is allowed only to registered users
+|Download Service (OGC) | OGC compliant service that supports data download
+|View and Download Service (OGC) | OGC compliant service that supports both data visualization and data download
+|Download link | Direct web address (URL) to a downloadable file or dataset
+|Offline Physical Support | Data provided on a tangible format (e.g., DVD, USB, analogic data)
+|API | Application Programming Interface
 |===
 
 === Project
