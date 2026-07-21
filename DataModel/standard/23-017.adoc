@@ -41,9 +41,7 @@ include::sections/clause_5_conventions.adoc[]
 
 include::sections/clause_6_informative_text.adoc[]
 
-include::sections/clause_7_need.adoc[]
-
-include::sections/clause_8_user_requirement.adoc[]
+include::sections/clause_7_data_model.adoc[]
 
 //include::sections/clause_8_media_types.adoc[]
 
