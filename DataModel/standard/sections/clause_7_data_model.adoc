@@ -9,9 +9,7 @@ include::../requirements/requirements_class_data_model.adoc[]
 
 [#img_gonar_full,reftext='{figure-caption} {counter:figure-num}']
 .GONAR in UML
-
 image::../figures/GONAR_full.png[width=600,align="center"]
-
 
 === Need
 
@@ -19,22 +17,18 @@ include::../requirements/data-model/need.adoc[]
 
 [#img_need,reftext='{figure-caption} {counter:figure-num}']
 .GONAR Need in UML
-//image::../figures/FeedbackItem_1.png[width=600,align="center"]
 image::../figures/GONAR_Need.png[width=600,align="center"]
-
-
 
 [#tbl_need,reftext='{table-caption} {counter:table-num}']
 .GONAR_Need data type
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|itemIdentifier | Identifier for the need item. | MD_Identifier data type (ISO 19115-1:2014 B.3.3.3) |  One (mandatory)
-|description | Brief narrative description of the need, normally for display to a human. | Character String type, not empty |  Zero or one (optional)
+|description | Brief narrative description of the need, normally for display to a human. | Character String type, not empty |  One (mandatory)
 |needType | Needs for data, classified in several types.|  GONAR_NeedTypeCode (see <<tbl_need_type_code>>) | One (mandatory)
-|area | Geographic scope or scale of the need.| GONAR_AreaCode (see <<tbl_area_code>>) |  One (mandatory)
+|area | Geographic scope or scale of the need.| GONAR_AreaCode (see <<tbl_area_code>>) |  Zero or one (optional)
 |subArea | Name of the specific geographic area, region, locality, or any topographical feature related to the need item.  | Character String type, not empty |  Zero or one (optional)
-|temporalExtent | Time period to be covered by the data (in years). | Data time (YYYY-YYYY) |  One or more (mandatory)
+|temporalExtent | Time period to be covered by the data (in years). | Data time (YYYY-YYYY) |  Zero or one (optional)
 |processToRealize | Summary of the methods or tasks that are necessary to realize the need. | Character String type, not empty |  Zero or one (optional)
 |relatedProduct | Product to be created or outcome to be achieved as a result of the process. | Character String type, not empty|  Zero or one (optional)
 |===
@@ -56,7 +50,6 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 |Other | Any other need (only if the predefined types do not fit)
 |===
 
-
 [#tbl_area_code,reftext='{table-caption} {counter:table-num}']
 .GONAR_AreaCode code list
 [cols="20,40",options="header"]
@@ -77,17 +70,15 @@ include::../requirements/data-model/data-requirement.adoc[]
 .GONAR Data Requirement in UML
 image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
   
-   
-
 [#tbl_data_requirement,reftext='{table-caption} {counter:table-num}']
 .GONAR_DataRequirement data type
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|itemIdentifier | Identifier for the data requirement tiem. | MD_Identifier data type (ISO 19115-1:2014 B.3.3.3) |  One (mandatory)
+|name | Descriptive name of the data requirement. | Character String type, not empty |  One (mandatory)
 |description | Brief narrative description of the data requirement, normally for display to a human. | Character String type, not empty |  Zero or one (optional)
-|variableClass | Set of Essential Variables (EV)^a^ related to the theme of the data required.|  GONAR_VariableClassCode (see <<tbl_variable_class_code>>) | One (mandatory)
-|variable | Name of the variable to be measured.|  Character String type, not empty |  One (mandatory)
+|variableClass | Set of Essential Variables (EV)^a^ related to the theme of the data required.|  GONAR_VariableClassCode (see <<tbl_variable_class_code>>) | Zero or more (optional)
+|variable | Name of the variable to be measured.|  Character String type, not empty |  Zero or one (optional)
 |variableDefinitionURI | URI of a definition of the variable.|  Character String type, not empty |  Zero or one (optional)
 |thematicUncertainty | Level of thematic uncertainty or error that can be accepted to address the need, expressed in standard units of measurement.|  Number |  Zero or one (optional)
 |coordinateMeasure | Other variables that should be captured in the same location in a coordinated manner together with the main variable required.|  Character String type, not empty |  Zero or one (optional)
@@ -100,7 +91,7 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |verticalResolution | Minimum distance in the vertical dimension that should separate two close measurements.|  Number |  Zero or one (optional)
 |verticalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) |  Zero or one (optional)
 |evenDistribution | How uniform the distribution of the samples would be. | Boolean |  Zero or one (optional)
-|dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) |  One or more (optional)
+|dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) |  Zero or more (optional)
 |citSciAcceptance | Whether citizen science data is accepted (yes or not) and why. | Character String type, not empty |  Zero or one (optional)
 4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.
 |===
@@ -163,7 +154,6 @@ include::../requirements/data-model/project.adoc[]
 
 [#img_project,reftext='{figure-caption} {counter:figure-num}']
 .GONAR Project in UML
-//image::../figures/FeedbackItem_1.png[width=600,align="center"]
 image::../figures/GONAR_Project.png[width=300,align="center"]
 
 [#tbl_project,reftext='{table-caption} {counter:table-num}']
