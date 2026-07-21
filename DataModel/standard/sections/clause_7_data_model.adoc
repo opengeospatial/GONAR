@@ -102,7 +102,7 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |evenDistribution | How uniform the distribution of the samples would be. | Boolean |  Zero or one (optional)
 |dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) |  One or more (optional)
 |citSciAcceptance | Whether citizen science data is accepted (yes or not) and why. | Character String type, not empty |  Zero or one (optional)
-4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each variable to be measured must be associated to their respective class.
+4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.
 |===
 
 [#tbl_variable_class_code,reftext='{table-caption} {counter:table-num}']
