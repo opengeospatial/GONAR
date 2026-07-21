@@ -161,7 +161,6 @@ image::../figures/GONAR_Project.png[width=300,align="center"]
 [width = "100%",options="header"]
 |===
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
-|itemIdentifier | Identifier for the project item. | MD_Identifier data type (ISO 19115-1:2014 B.3.3.3) |  One (mandatory)
 |name | Name of the project. | Character String type, not empty |  One (mandatory)
 |description | Brief narrative description of the project, normally for display to a human. | Character String type, not empty |  One (mandatory)
 |logo | URL of the project logo. | Character String type, not empty |  Zero or one (optional)
