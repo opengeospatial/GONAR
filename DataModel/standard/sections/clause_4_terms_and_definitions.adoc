@@ -1,23 +1,21 @@
 == Terms and Definitions
-//GONAR !!
-
 This document uses the terms defined in Sub-clause 5.3 of OGC 06-121r9 [1], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "`shall`" (not "`must`") is the verb form used to indicate a requirement to be strictly followed to conform to this standard. It also uses definitions from the first version of the conceptual model OGC 15-097r1:2016 [7].
 
 For the purposes of this document, the following additional terms and definitions apply.
+
+=== need
+a problem or an issue to be addressed by using in-situ observational data.
+
+=== data requirement
+specific technical characteristics of the in-situ observations needed to deliver a reliable potential geospatial product or service.
+
+=== project
+context in which needs and requirements are originated. Datasets and their requirements are derived from the scope and objectives of a project and condition the feasibility of the results of the project.
 
 //=== item
 //anything that can be described and considered separately.
 //[.source]
 //<<ISO19157:2013>>
-
-=== need
-a problem or an issue to be addressed by using in-situ observational data.
-
-=== requirement
-specific technical characteristics of the in-situ observations needed to deliver a reliable potential geospatial product or service.
-
-=== project
-context in which needs and requirements are expressed. 
 
 //=== quality
 //degree to which a set of inherent characteristics fulfils requirements.
