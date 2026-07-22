@@ -1,24 +1,60 @@
 [obligation=informative]
 === Geospatial Observations, Needs and Requirements
 
-In addition to metadata provided by the original data provider describing geospatial resources, many users report that they trust data based on information about studies performed by their peers. An important element of that trust constitutes not only linking datasets with relevant citations in the scholarly literature, but also a desire for less formal feedback mechanisms such as user comments. As user feedback is a key driver for providers to improve their data products, some data providers have also expressed their desire for a standard such as GUF. (Note that ISO 19115 defines a ‘Citation’ class, but currently this is mainly used to specify a mechanism for citing a dataset, not for linking to external publications about the dataset.). In ISO 19115-1:2014 - Geographic information -- Metadata, the MD_Usage class is an attempt to address this need, but it appears not to be a suitable or successful means to record user feedback information.
+//In addition to metadata provided by the original data provider describing geospatial resources, many users report that they trust data based on information about studies performed by their peers. An important element of that trust constitutes not only linking datasets with relevant citations in the scholarly literature, but also a desire for less formal feedback mechanisms such as user comments. As user feedback is a key driver for providers to improve their data products, some data providers have also expressed their desire for a standard such as GUF. (Note that ISO 19115 defines a ‘Citation’ class, but currently this is mainly used to specify a mechanism for citing a dataset, not for linking to external publications about the dataset.). In ISO 19115-1:2014 - Geographic information -- Metadata, the MD_Usage class is an attempt to address this need, but it appears not to be a suitable or successful means to record user feedback information.
 
-The purpose of providing user feedback is to inform other users and data providers about use cases and experiences using a given geospatial resource. The goal is to collect requirements for data that providers can incorporate into objective quality measures for their products, allowing providers to meet the real needs of users and potentially to find new markets for their data.
+//The purpose of providing user feedback is to inform other users and data providers about use cases and experiences using a given geospatial resource. The goal is to collect requirements for data that providers can incorporate into objective quality measures for their products, allowing providers to meet the real needs of users and potentially to find new markets for their data.
 
-In order to allow for simple user interfaces that can cover different levels of expertise on geospatial data usage, the GUF model is designed to be as simple as possible but comprehensive enough. Following are examples of what the GUF model allows: 
+//In order to allow for simple user interfaces that can cover different levels of expertise on geospatial data usage, the GUF model is designed to be as simple as possible but comprehensive enough. Following are examples of what the GUF model allows: 
 
-* Commenting, asking questions, providing answers (the GUF_UserComment class);
-* Rating data (GUF_Rating);
-* Citing publications (QCM_Publication);
-* Providing a quality measure (additionalQuality) ;
-* Documenting additional lineage information (additionalLineageSteps);
-* Describing the usage (GUF_UsageReport or GUF_ReproducibleUsage); or
-* Emphasizing a significant event that conditions the interpretation of a dataset (GUF_SignificantEvent). 
+//* Commenting, asking questions, providing answers (the GUF_UserComment class);
+//* Rating data (GUF_Rating);
+//* Citing publications (QCM_Publication);
+//* Providing a quality measure (additionalQuality) ;
+//* Documenting additional lineage information (additionalLineageSteps);
+//* Describing the usage (GUF_UsageReport or GUF_ReproducibleUsage); or
+//* Emphasizing a significant event that conditions the interpretation of a dataset (GUF_SignificantEvent). 
 
-As in the first version of the GUF conceptual model [7], each one of the previous examples is considered an “item” of feedback. Feedback items can be arranged in collections and a summary description of the collection is also modeled. Geospatial User Feedback can be provided for both data or metadata.
+//As in the first version of the GUF conceptual model [7], each one of the previous examples is considered an “item” of feedback. Feedback items can be arranged in collections and a summary description of the collection is also modeled. Geospatial User Feedback can be provided for both data or metadata.
+
+//=== Quality Common
+
+//The GUF Standard reuses elements of the geospatial metadata work and standard [ISO19115-1]. This forms the basis of a data model class list that is common and useful for both quality metadata and user feedback metadata. Some classes have been added to meet the requirements for expressing user feedback.
+
+//=== Clauses not containing normative material sub-clause 2
+
+Understanding data user requirements is a crucial initial step for producing data that fits its intended purpose. However, data providers often create geospatial datasets that they believe are feasible and useful, based on product specifications, but those providers might not completely know the real needs of users, resulting in reduced effective utilization of data.Requirements can be collected and utilized to define and provide a single data product or can be used to define a collection of datasets that cover a particular thematic domain. This way, when a user requirement for observations can not be covered with existing datasets or product specifications (e.g., air quality data is not updated every hour, so a pollutant plume cannot be tracked), data producers can fill the gaps in the current data products by deploying new sensors and extend their product specifications to satisfy user needs (e.g., a new Air quality dataset is produced every hour, just in case a pollution plume needs to be tracked), and potentially to find new markets for their data.
+
+For the purpose of this Standard, Data requirements (the specifications describing datasets that a project needs to collect, store, analyze, and present to achieve the objectives of such a project) shall be distinguished from Standard requirements (the modular specification divides the standards into requirements classes that contains 1 or more requirements/recommendations/permissions). 
+
+Within GONAR, data requirements are described in the context of a project representing a user or a community of users working towards achieving the project objectives. A project can derive in one or more needs, which can be translated into one or more data requirements.
+
+The GONAR model is designed to be as simple as possible but comprehensive enough. Following are examples of questions that the GONAR model allows to answer:
+
+* What is the purpose or need that motivates a particular data requirement?
+* What types of needs (e.g., scientific research, decision making, policy monitoring) are being addressed by a given project?
+* What geographic area and temporal extent are associated with a specific need?
+* What products or outcomes are expected from addressing a particular need?
+* What methods or tasks are necessary to realize the need?
+* Which variables are required to address a given need?
+* What horizontal and vertical resolution are required for a particular variable?
+* What timeliness and update frequency are required for a particular variable?
+* Which methods of data access are acceptable for fulfilling the need?
+* Is citizen science data considered acceptable for addressing a given need?
+* Which data requirements are shared by multiple needs or projects?
+* How do the data requirements differ between two projects addressing similar problems?
+* Which projects require observations of a given variable or variable class?
+* Which needs require data over a particular geographic scope (e.g., global, continental, national, or local)?
+
+When combined with a catalogue of existing datasets or observational resources, the GONAR model can also support answer questions such as:
+
+* Which datasets meet the data requirements?
+* Which data requirements cannot currently be met by the available datasets?
+* Which projects are affected by gaps in data availability or quality?
+* Which projects are affected by barriers in data accessibility?
 
 === Quality Common
 
-The GUF Standard reuses elements of the geospatial metadata work and standard [ISO19115-1]. This forms the basis of a data model class list that is common and useful for both quality metadata and user feedback metadata. Some classes have been added to meet the requirements for expressing user feedback.
+The GONAR Standard reuses elements and concepts defined in [ISO19131]. This forms the basis of a data model class list that is common and useful for describing data products specifications from the data producer perspective. Some classes have been added to represent the user perspective.
 
-//=== Clauses not containing normative material sub-clause 2
+Whenever possible, GONAR also reuses elements defined in [ISO19115]. While ISO 19115 it is intended to describe geospatial metadata for existing datasets, GONAR focuses on describing the characteristics of datasets before they have been identified. Some elements that are applicable to describing data requirements are reused.
