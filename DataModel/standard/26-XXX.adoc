@@ -1,4 +1,4 @@
-= OGC Geospatial Observatinos Needs and Requirements (GONAR) Standard: Data Model.
+= OGC Geospatial Observations Needs and Requirements (GONAR) Standard: Data Model.
 :doctype: standard
 :encoding: utf-8
 :lang: en

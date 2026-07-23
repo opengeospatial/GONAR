@@ -9,13 +9,11 @@
 
 //This Standard neither defines an encoding nor a query language to request or send user feedback to catalogues. 
 
-This OGC Standard defines a data model for encoding needs and user requirements for capturing observations. This version of the GONAR Standard is inspired by the ISO 19131 data model and the ISO 19115 data model whereas possible. A set of information classes is defined.
+The "OGC Geospatial Observations Needs and Requirements (GONAR) Standard: Data Model" defines the data model for encoding user needs and data requirements about observational data. This Standard is inspired by the ISO 19131 data model and the ISO 19115 data model whereas possible. This Standard describes three requirement classes for needs, data requirements and projects.
 
-This OGC Standard is applicable to servers and clients that want to capture and exchange data requirements information.
+This OGC Standard is defined to support implementation of clients that are able to capture and exchange data requirements of geospatial data. Clients implementing this Standard can provide a user interface to allow for encoding needs and requirements descriptions and to present this information in a database. In addition, this OGC Standard is applicable to servers that store data requirements information. Clients and servers can exchange data requirements using the data model defined in this Standard
 
-This OGC Standard is defined to support implementation of clients that are able to capture and exchange requirements of geospatial data. Clients implementing this Standard can provide a user interface to allow for encoding needs and requirements descriptions and to present this information in a database.
-
-This Standard neither defines an encoding nor a query language to request or exchange requirements with other systems.
+While, this Standard neither defines an encoding nor a query language to request or exchange requirements with other systems, it can be the bases for other standards doing so.
 
 
 
