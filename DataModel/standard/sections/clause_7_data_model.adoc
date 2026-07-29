@@ -66,9 +66,9 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 === Data requirement
 A data requirement is specified by users in the context of a need by concrete technical characteristics of an in-situ observation collection that may or may not exist yet. 
 
-Following the producers point fo view, the ISO 19131 specifies characteristics of products with single values that act a quality threshold. As an example, from the the producer point of view, the horizontal resolution should be inferior to a given value to be "approved". This Standard adopts the user point of view, where for the same characteristic there is more flexibility commonly expressed by two numbers providing an ideal value (sometimes called _goal_) and a compromise value (sometime called _threshold_). Anything in between these two numbers is still considered acceptable. Following the same example, a user knows that an horizontal resolution of 10m (_goal_) will generate very good results but it is prepared to accept 100m resolution (_threshold_) because it will still be possible to get some acceptable results, perhaps with some extra uncertainty. 
+Following the producers point fo view, the ISO 19131 specifies characteristics of products with single values that act a quality threshold. As an example, from the the producer point of view, the horizontal resolution should be inferior to a given value to be "approved". This Standard adopts the user point of view, where for the same characteristic there is more flexibility commonly expressed by two numbers providing an ideal value (sometimes called _goal_) and a compromise value (sometime called _threshold_). Anything in between these two numbers is still considered acceptable. Following the same example, a user knows that an horizontal resolution of 10m (_goal_) will generate very good results but it is prepared to accept 100m resolution (_threshold_) because it will still be possible to get some acceptable results, perhaps with some extra uncertainty.
 
-A data requirement is characterized by the thematic variable captured, the coordinated measurements, the update frequency, the delivery timelines, the horizontal and vertical resolutions, its distribution in space and the data access mechanism.
+A data requirement is characterized by the thematic variable captured, the coordinated measurements, the update frequency, the delivery timelines, the horizontal and vertical resolutions, its distribution in space and the data access mechanism. Some numerical characteristics are associated with their units of measurement.
 
 include::../requirements/data-model/data-requirement.adoc[]
 
@@ -84,22 +84,23 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |name | Descriptive name of the data requirement. | Character String type, not empty |  One (mandatory)
 |description | Brief narrative description of the data requirement, normally for display to a human. | Character String type, not empty |  Zero or one (optional)
 |variableClass | Set of Essential Variables (EV)^a^ related to the theme of the data required.|  GONAR_VariableClassCode (see <<tbl_variable_class_code>>) | Zero or more (optional)
-|variable | Name of the variable to be measured.|  Character String type, not empty |  Zero or one (optional)
-|variableDefinitionURI | URI of a definition of the variable.|  Character String type, not empty |  Zero or one (optional)
-|thematicUncertainty | Level of thematic uncertainty or error that can be accepted to address the need, expressed in standard units of measurement.|  Number |  Zero or one (optional)
-|coordinateMeasure | Other variables that should be captured in the same location in a coordinated manner together with the main variable required.|  Character String type, not empty |  Zero or one (optional)
-|updateFrequency | Time interval or how often the data must be captured.|  Number |  Zero or one (optional)
-|updateFrequencyUoM | Units of measurement of time.|  GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) |  Zero or one (optional)
-|timeliness | Time delay between the measurement acquisition and results accessibility required to address the need.|  Number |  Zero or one (optional)
-|timelinessUoM | Units of measurement of time.|  GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) |  Zero or one (optional)
-|horizontalResolution | Minimum distance in the horizontal dimension that should separate two close measurements.|  Number |  Zero or one (optional)
-|horizontalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) |  Zero or one (optional)
-|verticalResolution | Minimum distance in the vertical dimension that should separate two close measurements.|  Number |  Zero or one (optional)
-|verticalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) |  Zero or one (optional)
-|evenDistribution | How uniform the distribution of the samples would be. | Boolean |  Zero or one (optional)
-|dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) |  Zero or more (optional)
-|citSciAcceptance | Whether citizen science data is accepted (yes or not) and why. | Character String type, not empty |  Zero or one (optional)
-4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.
+|variable | Name of the variable to be measured.|  Character String type, not empty | Zero or one (optional)
+|variableDefinitionURI | URI of a definition of the variable.| Character String type, not empty | Zero or one (optional)
+|thematicUncertainty | Level of thematic uncertainty or error that can be accepted to address the need, expressed in standard units of measurement.|  Number | Zero, one or two (optional)^b^
+|coordinateMeasure | Other variables that should be captured in the same location in a coordinated manner together with the main variable required.|  Character String type, not empty | Zero or one (optional)
+|updateFrequency | Time interval or how often the data must be captured.|  Number | Zero, one or two (optional)^b^
+|updateFrequencyUoM | Units of measurement of time.|  GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) | Zero or one (optional)
+|timeliness | Time delay between the measurement acquisition and results accessibility required to address the need.|  Number | Zero, one or two (optional)^b^
+|timelinessUoM | Units of measurement of time.|  GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) | Zero or one (optional)
+|horizontalResolution | Minimum distance in the horizontal dimension that should separate two close measurements.|  Number | Zero, one or two (optional)^b^
+|horizontalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) | Zero or one (optional)
+|verticalResolution | Minimum distance in the vertical dimension that should separate two close measurements.|  Number | Zero, one or two (optional)^b^
+|verticalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) | Zero or one (optional)
+|evenDistribution | How uniform the distribution of the samples would be. | Boolean | Zero or one (optional)
+|dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) | Zero or more (optional)
+|citSciAcceptance | Whether citizen science data is accepted (yes or not) and why. | Character String type, not empty | Zero or one (optional)
+4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.+
+^b^ If only one value is provided is interpreted as the threshold value. If two values are provided the most restrictive is interpreted as the _goal_ value and the other as the _threshold_ value
 |===
 
 [#tbl_variable_class_code,reftext='{table-caption} {counter:table-num}']
