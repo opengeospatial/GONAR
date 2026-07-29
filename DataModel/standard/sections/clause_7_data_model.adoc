@@ -1,17 +1,18 @@
-[[sc_need]]
+[[sc_data_model]]
 == Requirements Class "Data Model"
 
 === Overview
 
-The Data Model requirements class defines the data model classes that define a need, a requirement, a project and the relation among them. 
+The Data Model requirements class defines the data model classes that describe a need, a data requirement, a project and the relation among them. This model is designed from the point of view of the user. The user belongs to a particular project and has the need to extract some information and knowledge from some data that has some descriptive characteristics (see <<img_gonar_full>>). Most of the characteristics are optional and they are expected to be populated as the user knowledge of the characteristics evolves and increases.
 
 include::../requirements/requirements_class_data_model.adoc[]
 
 [#img_gonar_full,reftext='{figure-caption} {counter:figure-num}']
-.GONAR in UML
+.GONAR UML class diagram
 image::../figures/GONAR_full.png[width=600,align="center"]
 
 === Need
+A need is a problem or an issue to be addressed by possessing some in-situ observational data. A need can be characterized by classifying it in types, a particular spacial scale (global, national, local, etc.) covering a particular subarea and analyzing a particular time span. The process chain that need to be executed over the data are only described as a summary, and sometimes a product is the result of the processing chain, and can be mentioned.
 
 include::../requirements/data-model/need.adoc[]
 
@@ -28,7 +29,7 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 |needType | Needs for data, classified in several types.|  GONAR_NeedTypeCode (see <<tbl_need_type_code>>) | One (mandatory)
 |area | Geographic scope or scale of the need.| GONAR_AreaCode (see <<tbl_area_code>>) |  Zero or one (optional)
 |subArea | Name of the specific geographic area, region, locality, or any topographical feature related to the need item.  | Character String type, not empty |  Zero or one (optional)
-|temporalExtent | Time period to be covered by the data (in years). | Data time (YYYY-YYYY) |  Zero or one (optional)
+|temporalExtent | Time period to be covered by the data (in years). | Data time (YYYY-YYYY) |  Zero one or two (optional, if only one value is provided the other is assume to be "now")
 |processToRealize | Summary of the methods or tasks that are necessary to realize the need. | Character String type, not empty |  Zero or one (optional)
 |relatedProduct | Product to be created or outcome to be achieved as a result of the process. | Character String type, not empty|  Zero or one (optional)
 |===
@@ -63,6 +64,11 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 |===
 
 === Data requirement
+A data requirement is specified by users in the context of a need by concrete technical characteristics of an in-situ observation collection that may or may not exist yet. 
+
+Following the producers point fo view, the ISO 19131 specifies characteristics of products with single values that act a quality threshold. As an example, from the the producer point of view, the horizontal resolution should be inferior to a given value to be "approved". This Standard adopts the user point of view, where for the same characteristic there is more flexibility commonly expressed by two numbers providing an ideal value (sometimes called _goal_) and a compromise value (sometime called _threshold_). Anything in between these two numbers is still considered acceptable. Following the same example, a user knows that an horizontal resolution of 10m (_goal_) will generate very good results but it is prepared to accept 100m resolution (_threshold_) because it will still be possible to get some acceptable results, perhaps with some extra uncertainty. 
+
+A data requirement is characterized by the thematic variable captured, the coordinated measurements, the update frequency, the delivery timelines, the horizontal and vertical resolutions, its distribution in space and the data access mechanism.
 
 include::../requirements/data-model/data-requirement.adoc[]
 
@@ -149,6 +155,11 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |===
 
 === Project
+context in which needs and requirements are originated and processes are executed to fulfill the needs and deliver the intended results. A project is participated by a user or a community of users working towards achieving the project objectives. 
+
+Commonly, projects have an starting activity devoted to analyze project needs and specify data requirements. Other activities in the project may look for observational data that matches completely or partially the requirements or other activities may produce the data required when it cannot be found elsewhere.
+
+While projects could be described in full, this is considered our of scope of this Standard and they are only provided as a means of classification and filtering of needs and data requirements. For example, project descriptions allow to query and create a view of all needs and requirements provided by a particular project or set of projects.
 
 include::../requirements/data-model/project.adoc[]
 
@@ -166,6 +177,3 @@ image::../figures/GONAR_Project.png[width=300,align="center"]
 |logo | URL of the project logo. | Character String type, not empty |  Zero or one (optional)
 |URL | Project URL. | Character String type, not empty |  One (mandatory)
 |===
-
-	
-

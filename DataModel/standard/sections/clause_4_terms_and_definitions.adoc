@@ -4,7 +4,7 @@ This document uses the terms defined in Sub-clause 5.3 of OGC 06-121r9 [1], whic
 For the purposes of this document, the following additional terms and definitions apply.
 
 === data requirement
-specific technical characteristics of the in-situ observations needed to deliver a reliable geospatial product or service that may or may not exist yet.
+specific technical characteristics of a in-situ observation collection  that may or may not exist yet and provided by data users to fulfill a _need_ and in the context of a _project_.
 
 NOTE: The ISO 19158:2025 defines the term "specified requirement" as "need or expectation that is stated" that can be considered an equivalent concept.
 
@@ -26,7 +26,7 @@ NOTE: In the context of this Standard, in order to execute the process activitie
 SOURCE: ISO 19158:2025
 
 === project
-context in which needs and requirements are originated and processes are executed to fulfill the needs and deliver the intended results. Data requirements are derived from the scope and objectives of a project and they condition the feasibility of the intended results of the project. Commonly, projects have an starting activity devoted to analyze project needs and data requirements. Other activities in the project may look for observational data that matches completely or partially the requirements and may need other activities to produce the data required.
+context in which needs and requirements are originated and processes are executed to fulfill the needs and deliver the intended results. A project is participated by a user or a community of users working towards achieving the project objectives. 
 
 //=== item
 //anything that can be described and considered separately.

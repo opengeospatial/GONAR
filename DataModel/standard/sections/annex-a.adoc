@@ -1,6 +1,8 @@
 [appendix,obligation=normative]
 [[annex-ats]]
 == Abstract Test Suite (Normative)
+
+TBD!!!
 === Introduction
 
 A conformant implementation of this Standard must satisfy the following system characteristics.
