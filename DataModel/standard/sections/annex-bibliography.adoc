@@ -4,7 +4,7 @@
 
 * [[[ISO19115-1:2014,ISO 19115-1:2014]]] _Geographic information -- Metadata -- Part 1: Fundamentals_
 
-* [[[ISO19131:2022,ISO 19112:2022]]] _Geographic information -- Data product specifications_
+* [[[ISO19131:2022,ISO 19131:2022]]] _Geographic information -- Data product specifications_
 
 * [[[ISO19158:2012,ISO 19158:2012]]] _Geographic information -- Quality assurance of data supply_
 
