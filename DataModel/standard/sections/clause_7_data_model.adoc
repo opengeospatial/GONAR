@@ -98,7 +98,6 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |verticalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) | Zero or one (optional)
 |evenDistribution | How uniform the distribution of the samples would be. | Boolean | Zero or one (optional)
 |dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) | Zero or more (optional)
-|citSciAcceptance | Whether citizen science data is accepted (yes or not) and why. | Character String type, not empty | Zero or one (optional)
 4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.+
 ^b^ If only one value is provided is interpreted as the threshold value. If two values are provided the most restrictive is interpreted as the _goal_ value and the other as the _threshold_ value
 |===
