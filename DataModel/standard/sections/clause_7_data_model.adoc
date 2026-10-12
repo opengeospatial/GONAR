@@ -12,7 +12,7 @@ include::../requirements/requirements_class_data_model.adoc[]
 image::../figures/GONAR_full.png[width=600,align="center"]
 
 === Need
-A need is a problem or an issue to be addressed by possessing some in-situ observational data. A need can be characterized by classifying it in types, a particular spacial scale (global, national, local, etc.) covering a particular subarea and analyzing a particular time span. The process chain that need to be executed over the data are only described as a summary, and sometimes a product is the result of the processing chain, and can be mentioned.
+A need is a problem or an issue to be addressed by using some in-situ observational data. A need can be characterized by classifying it in types, a particular spacial scale (global, national, local, etc.) covering a particular subarea and analyzing a particular time span. The process chain that needs to be executed over the data is only described as a summary, and sometimes a product is the result of the processing chain, and can be mentioned.
 
 include::../requirements/data-model/need.adoc[]
 
@@ -29,9 +29,10 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 |needType | Needs for data, classified in several types.|  GONAR_NeedTypeCode (see <<tbl_need_type_code>>) | One (mandatory)
 |area | Geographic scope or scale of the need.| GONAR_AreaCode (see <<tbl_area_code>>) |  Zero or one (optional)
 |subArea | Name of the specific geographic area, region, locality, or any topographical feature related to the need item.  | Character String type, not empty |  Zero or one (optional)
-|temporalExtent | Time period to be covered by the data (in years). | Data time (YYYY-YYYY) |  Zero one or two (optional, if only one value is provided the other is assume to be "now")
+|temporalExtent | Time period to be covered by the data (in years). | EX_TemporalExtent (ISO 19115-1:2014 B.3.1.3)^a^ |  Zero one or two (optional, if only one value is provided the other is assume to be "now")
 |processToRealize | Summary of the methods or tasks that are necessary to realize the need. | Character String type, not empty |  Zero or one (optional)
 |relatedProduct | Product to be created or outcome to be achieved as a result of the process. | Character String type, not empty|  Zero or one (optional)
+4+| ^a^ Data time (YYYY-YYYY).
 |===
 
 [#tbl_need_type_code,reftext='{table-caption} {counter:table-num}']
@@ -39,16 +40,16 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 [cols="20,40",options="header"]
 |===
 |Property |Description
-|Numerical Model | Input or assessment of a numerical model
-|Share Data | Deployment of a sharing data system or service
-|Other in-situ CalVal | Calibration and validation of other in-situ data
-|Remote Sensing CalVal | Calibration and validation of Remote Sensing products
-|Scientific Research | Demonstration of a scientific hypothesis or answer a research question
-|Decision Making | Assist in a decision-making process
-|Policy Monitoring | Calculate a policy monitoring indicator or KPI
-|Commercial Product or Service | Provision of a commercial service derived from the data
-|Prepare an EV product or matrix | Preparation of a harmonized Essential Variable product or matrix
-|Other | Any other need (only if the predefined types do not fit)
+|numericalModel | Input or assessment of a numerical model
+|shareData | Deployment of a sharing data system or service
+|otherIn-situCalVal | Calibration and validation of other in-situ data
+|remoteSensingCalVal | Calibration and validation of Remote Sensing products
+|scientificResearch | Demonstration of a scientific hypothesis or answer a research question
+|decisionMaking | Assist in a decision-making process
+|policyMonitoring | Calculate a policy monitoring indicator or KPI
+|commercialProductOrService | Provision of a commercial service derived from the data
+|prepareAnEssentialVariableProductOrMatrix | Preparation of a harmonized Essential Variable product or matrix
+|other | Any other need (only if the predefined types do not fit)
 |===
 
 [#tbl_area_code,reftext='{table-caption} {counter:table-num}']
@@ -56,11 +57,11 @@ image::../figures/GONAR_Need.png[width=600,align="center"]
 [cols="20,40",options="header"]
 |===
 |Property |Description
-|Global | Applicable globally, to the whole Earth planet
-|Continental | Applicable to a given continent
-|National | Applicable to a given country
-|Subnational | Applicable to a given region within a country
-|Local | Applicable locally
+|global | Applicable globally, to the whole Earth planet
+|continental | Applicable to a given continent
+|national | Applicable to a given country
+|subnational | Applicable to a given region within a country
+|local | Applicable locally
 |===
 
 === Data requirement
@@ -86,20 +87,17 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |variableClass | Set of Essential Variables (EV)^a^ related to the theme of the data required.|  GONAR_VariableClassCode (see <<tbl_variable_class_code>>) | Zero or more (optional)
 |variable | Name of the variable to be measured.|  Character String type, not empty | Zero or one (optional)
 |variableDefinitionURI | URI of a definition of the variable.| Character String type, not empty | Zero or one (optional)
-|thematicUncertainty | Level of thematic uncertainty or error that can be accepted to address the need, expressed in standard units of measurement.|  Number | Zero, one or two (optional)^b^
+|thematicUncertainty | Level of uncertainty or error that can be accepted to address the need, expressed in standard units of measurement.|  GONAR_IntervalOther (see <<tbl_interval_other>>) | Zero, one or two (optional)^b^
 |coordinateMeasure | Other variables that should be captured in the same location in a coordinated manner together with the main variable required.|  Character String type, not empty | Zero or one (optional)
-|updateFrequency | Time interval or how often the data must be captured.|  Number | Zero, one or two (optional)^b^
-|updateFrequencyUoM | Units of measurement of time.|  GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) | Zero or one (optional)
-|timeliness | Time delay between the measurement acquisition and results accessibility required to address the need.|  Number | Zero, one or two (optional)^b^
-|timelinessUoM | Units of measurement of time.|  GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) | Zero or one (optional)
-|horizontalResolution | Minimum distance in the horizontal dimension that should separate two close measurements.|  Number | Zero, one or two (optional)^b^
-|horizontalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) | Zero or one (optional)
-|verticalResolution | Minimum distance in the vertical dimension that should separate two close measurements.|  Number | Zero, one or two (optional)^b^
-|verticalResolutionUoM | Units of measurement of distance.|  GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) | Zero or one (optional)
+|updateFrequency | Time range or how often the data must be captured, expressed in units of measurement of time.|  GONAR_IntervalTemporal (see <<tbl_interval_temporal>>) | Zero, one or two (optional)^b^
+|timeliness | Time delay between the measurement acquisition and results accessibility required to address the need, expressed in units of measurement of time.|  GONAR_IntervalTemporal (see <<tbl_interval_temporal>>) | Zero, one or two (optional)^b^
+|horizontalResolution | Minimum distance in the horizontal dimension that should separate two close measurements, expressed in units of measurement of distance.|  GONAR_IntervalDistance (see <<tbl_interval_distance>>) | Zero, one or two (optional)^b^
+|verticalResolution | Minimum distance in the vertical dimension that should separate two close measurements, expressed in units of measurement of distance.|  GONAR_IntervalDistance (see <<tbl_interval_distance>>) | Zero, one or two (optional)^b^
 |evenDistribution | How uniform the distribution of the samples would be. | Boolean | Zero or one (optional)
 |dataAccess | Expected method to access to the required data. | GONAR_DataAccessCode (see <<tbl_data_access_code>>) | Zero or more (optional)
-4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.+
-^b^ If only one value is provided is interpreted as the threshold value. If two values are provided the most restrictive is interpreted as the _goal_ value and the other as the _threshold_ value
+4+| ^a^ GONAR proposes to use the Essential Variables framework defined by Lehmann et al in 2020 (DOI 10.1080/17538947.2019.1636490) to classify the requirements thematically. Thus, each required variable to be observed must be associated to their respective class.
+
+^b^ If only one value is provided is interpreted as the threshold value. If two values are provided the most restrictive is interpreted as the _goal_ value and the other as the _threshold_ value.
 |===
 
 [#tbl_variable_class_code,reftext='{table-caption} {counter:table-num}']
@@ -107,14 +105,65 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 [cols="20,40",options="header"]
 |===
 |Property |Description
-|Agriculture (EAV) | Essential Agriculture Variables
-|Atmosphere (ECV) | Essential Climate Variables - Atmosphere
-|Biodiversity (EBV) | Essential Biodiversity Variables
-|Geodiversity (EGV) | Essential Geodiversity Variables
-|Socioeconomic (SocioEcoV) | Socioeconomic Variables
-|Ocean (ECV & EOV) | Essential Climate Variables - Ocean
-|Terrestrial (ECV) | Essential Climate Variables - Terrestrial
-|Water (EWV) | Essential Water Variables
+|agriculture (EAV) | Essential Agriculture Variables
+|atmosphere (ECV) | Essential Climate Variables - Atmosphere
+|biodiversity (EBV) | Essential Biodiversity Variables
+|geodiversity (EGV) | Essential Geodiversity Variables
+|socioeconomic (SocioEcoV) | Socioeconomic Variables
+|ocean (ECV & EOV) | Essential Climate Variables - Ocean
+|terrestrial (ECV) | Essential Climate Variables - Terrestrial
+|water (EWV) | Essential Water Variables
+|===
+
+[#tbl_data_access_code,reftext='{table-caption} {counter:table-num}']
+.GONAR_DataAccessCode code list
+[cols="20,40",options="header"]
+|===
+|Property |Description
+|cloudService | Data access service on the Internet
+|subscriptionServer | Data access is allowed only to registered users
+|downloadService (OGC) | OGC compliant service that supports data download
+|viewAndDownloadService (OGC) | OGC compliant service that supports both data visualization and data download
+|downloadLink | Direct web address (URL) to a downloadable file or dataset
+|offlinePhysicalSupport | Data provided on a tangible format (e.g., DVD, USB, analogic data)
+|API | Application Programming Interface
+|===
+
+==== Interval
+The GONAR data model uses an abstract class named Interval to quantitatively express requirements through a threshold value and/or a target goal value. Three specializations are provided: IntervalTemporal, IntervalDistance, IntervalOther.
+
+[#tbl_interval,reftext='{table-caption} {counter:table-num}']
+.GONAR_Interval abstract class
+[width = "100%",options="header"]
+|===
+|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
+|threshold |Minimum acceptable value for the requirement.|Number
+|Zero or one (optional)
+|goal |Desired target value for the requirement.|Number |Zero or one (optional)
+|===
+
+[#tbl_interval_temporal,reftext='{table-caption} {counter:table-num}']
+.GONAR_IntervalTemporal specialization
+[width = "100%",options="header"]
+|===
+|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
+|UoM |Temporal unit of measure. |GONAR_TemporalUoMCode (see <<tbl_temporal_uom_code>>) |One (mandatory) 
+|===
+
+[#tbl_interval_distance,reftext='{table-caption} {counter:table-num}']
+.GONAR_IntervalDistance specialization
+[width = "100%",options="header"]
+|===
+|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
+|UoM |Distance unit of measure. |GONAR_DistanceUoMCode (see <<tbl_distance_uom_code>>) |One (mandatory) 
+|===
+
+[#tbl_interval_other,reftext='{table-caption} {counter:table-num}']
+.GONAR_IntervalOther specialization
+[width = "100%",options="header"]
+|===
+|*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
+|UoM |Any unit of measure. |Character String type, not empty |One (mandatory) 
 |===
 
 [#tbl_temporal_uom_code,reftext='{table-caption} {counter:table-num}']
@@ -140,22 +189,8 @@ image::../figures/GONAR_DataRequirement.png[width=600,align="center"]
 |m | Meter
 |===
 
-[#tbl_data_access_code,reftext='{table-caption} {counter:table-num}']
-.GONAR_DataAccessCode code list
-[cols="20,40",options="header"]
-|===
-|Property |Description
-|Cloud Service | Data access service on the Internet
-|Subscription Server | Data access is allowed only to registered users
-|Download Service (OGC) | OGC compliant service that supports data download
-|View and Download Service (OGC) | OGC compliant service that supports both data visualization and data download
-|Download link | Direct web address (URL) to a downloadable file or dataset
-|Offline Physical Support | Data provided on a tangible format (e.g., DVD, USB, analogic data)
-|API | Application Programming Interface
-|===
-
 === Project
-context in which needs and requirements are originated and processes are executed to fulfill the needs and deliver the intended results. A project is participated by a user or a community of users working towards achieving the project objectives. 
+Context in which needs and requirements are originated and processes are executed to fulfill the needs and deliver the intended results. A project is participated by a user or a community of users working towards achieving the project objectives. 
 
 Commonly, projects have an starting activity devoted to analyze project needs and specify data requirements. Other activities in the project may look for observational data that matches completely or partially the requirements or other activities may produce the data required when it cannot be found elsewhere.
 
@@ -174,6 +209,6 @@ image::../figures/GONAR_Project.png[width=300,align="center"]
 |*Name* | *Definition*	| *Data type and values* | *Multiplicity and use*
 |name | Name of the project. | Character String type, not empty |  One (mandatory)
 |description | Brief narrative description of the project, normally for display to a human. | Character String type, not empty |  One (mandatory)
-|logo | URL of the project logo. | Character String type, not empty |  Zero or one (optional)
-|URL | Project URL. | Character String type, not empty |  One (mandatory)
+|logo | URL referencing a graphic representation or emblem used to visually identify the project. | Character String type, not empty |  Zero or one (optional)
+|URL | URL of the project's primary online resource. | Character String type, not empty |  One (mandatory)
 |===
